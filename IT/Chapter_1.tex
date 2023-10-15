@@ -1,0 +1,430 @@
+% !TeX encoding = UTF-8
+% !TEX TS-program = xelatex
+\documentclass[a4paper,twocolumn]{article}
+\usepackage{fontspec}
+\usepackage{moodle}
+\usepackage{hyperref,babel}
+\usepackage[cm]{fullpage}
+\begin{document}
+\begin{quiz}{Kurose_Ross_Chapter_1_KC}
+\begin{matching}[
+	points=1,
+	penalty=0.33333,
+]{1.2-1 Access network per-subscriber speeds. Match the access network with the...}
+<strong>1.2-1 Access network per-subscriber speeds. </strong>Match the access network with the approximate speeds that a subscriber might experience. (Note: if you look these up, do so in the 8E textbook, slides, or video -- not in the 7E or earlier versions, since link access speeds are always increasing over the years).
+\item Ethernet \answer Wired. Up to 100's Gbps per link.
+\item 802.11 WiFi \answer Wireless. 10’s to 100’s of Mbps per device.
+\item Cable access network \answer Wired. Up to 10’s to 100’s of Mbps downstream per user.
+\item Digital Subscriber Line \answer Wired. Up to 10’s of Mbps downstream per user.
+\item 4G cellular LTE \answer Wireless. Up to 10’s Mbps per device.
+\item \answer Wireless, up to 10's Kbps per device.
+\item \answer Wired. Up to 1 Tbps per link.
+\end{matching}
+
+\begin{matching}[
+	points=1,
+	penalty=0.33333,
+]{1.3-7 Packet switching or Circuit-switching? Consider a scenario in which 5 ...}
+<strong>1.3-7 Packet switching or Circuit-switching?</strong> Consider a scenario in which 5 users are being multiplexed over a channel of 10 Mbps.  Under the various scenarios below, match the scenario to whether circuit switching or packet switching is better.
+\item Each user generates traffic at an average rate of 2.1 Mbps, generating traffic at a rate of 15 Mbps when transmitting \answer Neither works well in this overload scenario
+\item Each user generates traffic at an average rate of 2 Mbps, generating traffic at a rate of 2 Mbps when transmitting \answer Circuit switching
+\item Each user generates traffic at an average rate of 0.21 Mbps, generating traffic at a rate of 15 Mbps when transmitting \answer Packet switching
+\end{matching}
+
+\begin{matching}[
+	points=1,
+	penalty=0.33333,
+]{1.4-01 Components of packet delay. Match the description of each component of...}
+<strong>1.4-01 Components of packet delay.</strong> Match the description of each component of packet delay to its name in the pull down list.
+\item Time needed to perform an integrity check, lookup packet information in a local table and move the packet from an input link to an output link in a router. \answer Processing delay
+\item Time spent waiting in packet buffers for link transmission. \answer Queueing delay
+\item Time spent transmitting packets bits into the link. \answer Transmission delay
+\item Time need for bits to physically propagate through the transmission medium from end one of a link to the other. \answer Propagation delay
+\end{matching}
+
+\begin{matching}[
+	points=1,
+	penalty=0.33333,
+]{1.5-1 Layers in the Internet protocol stack. Match the function of a layer in...}
+<strong>1.5-1 Layers in the Internet protocol stack.</strong> Match the function of a layer in the Internet protocol stack to the name of the layer implementing that function.
+\item Protocols that are part of a distributed network application. \answer Application Layer
+\item Transfer of data between one process and another process (typically on different hosts). \answer Transport layer
+\item Delivery of datagrams from a source host to a destination host (typically). \answer Network layer
+\item Transfer of data between neighboring network devices. \answer Link layer
+\item Transfer of a bit into and out of a transmission media. \answer Physical layer
+\end{matching}
+
+\begin{matching}[
+	points=1,
+	penalty=0.33333,
+]{1.5-2 What’s a “packet” really called? Match the name of an Internet layer ...}
+<strong>1.5-2 What’s a “packet” really called?</strong> Match the name of an Internet layer with unit of data that is exchanged among protocol entities at that layer, using the pulldown menu.
+\item Application layer \answer Message
+\item Transport layer \answer Segment
+\item Network layer \answer Datagram
+\item Link layer \answer Frame
+\item Physical layer \answer Bit
+\end{matching}
+
+\begin{matching}[
+	points=1,
+	penalty=0.33333,
+]{1.5-3 Protocol headers. Consider the figure below, showing a link-layer frame...}
+<strong>1.5-3 Protocol headers.</strong> Consider the figure below, showing a link-layer frame heading from a host to a router.  There are three header fields shown.  Match the name of a header with a header label shown in the figure. 
+\begin{center}
+\includegraphics[width=\linewidth]{/gaia.cs.umass.edu/kurose_ross/LMS/images/Chapter_1_KC/1.5.3.jpg}
+\end{center}
+
+\item Header H<sub>1</sub> \answer Link layer
+\item Header H<sub>2</sub> \answer Network Layer
+\item Header H<sub>3</sub> \answer Transport layer
+\item \answer Application layer
+\item \answer Physical layer
+\end{matching}
+
+\begin{matching}[
+	points=1,
+	penalty=0.33333,
+]{1.6-1 Security defenses.  Match the description of a security defense with ...}
+<strong>1.6-1 Security defenses.</strong>  Match the description of a security defense with its name.
+\item Specialized “middleboxes” filtering or blocking traffic, inspecting packet contents inspections \answer Firewall
+\item Provides confidentiality by encoding contents \answer Encryption
+\item Used to detect tampering/changing of message contents, and to identify the originator of a message. \answer Digital signatures
+\item Limiting use of resources or capabilities to given users. \answer Access control
+\item Proving you are who you say you are. \answer Authentication
+\end{matching}
+
+\begin{matching}[
+	points=1,
+	penalty=0.33333,
+]{1.7-1 Networking history - when did it happen? Match the networking event ...}
+<strong>1.7-1 Networking history - when did it happen?</strong> Match the networking event with the time frame when the event occurred.
+\item Early studies of packet switching by Baran, Davies, Kleinrock. \answer Early 1960's
+\item First ARPAnet node is operational. \answer Late 1960's
+\item Internetting: DARPA researchers connect three networks together. \answer 1970's
+\item The Internet Protocol (IP) is standardized in RFC 791. \answer Early 1980's
+\item Congestion control is added to the TCP protocol. \answer Late 1980's
+\item The WWW starts up (note: the WWW design started at the end of previous decade). \answer 1990's
+\item Software-defined networking begins. \answer 2000-2010
+\item The number of wireless Internet-connected devices surpasses the number of connected wired devices. \answer 2010 - 2020
+\end{matching}
+
+\begin{matching}[
+	points=1,
+	penalty=0.33333,
+]{1.8-1.  "Who controls the Internet?"  Match an organization name below with ...}
+<span style="font-size: 12pt;"><strong>1.8-1.  "Who controls the Internet?"</strong>  Match an organization name below with the role of the organization in Internet governance. To answer this question you’ll need to watch the \href{https://www.youtube.com/watch?v=xrd4hD_9fS8}{Chapter 1 supplemental video on “Who Controls the Internet?”}.
+\item <span style="font-size: 12pt;">Internet Governance Forum (IGF)  \answer A multistakeholder deliberation body, convened by the United Nations, that does not _make_ decisions but informs and inspires those who do.
+\item <span style="font-size: 12pt;">Internet Engineering Task Force (IETF) \answer Sets the technical standards for Internet infrastructure -- particularly protocols, device requirements, and data formats -- in more than 9000 Request for Comments (RFCs).
+\item <span style="font-size: 12pt;">3rd Generation Partnership Project (3GPP). \answer Sets the technical standards for 3G, 4G, and 5G mobile cellular system.
+\item <span style="font-size: 12pt;">Internet Corporation for Assigned Names and Numbers (ICANN) \answer Handles (assigns, adjudicates) Internet names, and manages the root level of the DNS.
+\item Institute for Electrical and Electronics Engineers \answer Sets the technical standard for Ethernet and WiFi link-layer standards.
+\end{matching}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+	multiple,
+]{1.1-1 What is the Internet?  Which of the following descriptions below ...}
+<strong>1.1-1 What is the Internet? </strong> Which of the following descriptions below correspond to a <em>"nuts-and-bolts"</em> view of the Internet? Select one or more of the answers below that are correct. [Hint: more than one of the answers below are correct].
+\item[feedback={Nice! This answer is correct.},fraction=33.33333] A collection of billions of computing devices, and packet switches interconnected by links.
+\item[feedback={Not quite right. This answer is incorrect.},] A platform for building network applications.
+\item[feedback={Nice! This answer is correct.},fraction=33.33333] A "network of networks".
+\item[feedback={Not quite right. This answer is incorrect.},] A place I go for information, entertainment, and to communicate with people.
+\item[feedback={Nice! This answer is correct.},fraction=33.33333] A collection of hardware and software components executing protocols that define the format and the order of messages exchanged between two or more communicating entities, as well as the actions taken on the transmission and/or receipt of a message or other event.
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+	multiple,
+]{1.1-2 What is the Internet (2)?  Which of the following descriptions below ...}
+<strong>1.1-2 What is the Internet (2)? </strong> Which of the following descriptions below correspond to a <em>"services"</em> view of the Internet? Select one or more of the answers below that are correct.  [Hint: more than one of answers below are correct].
+\item[feedback={Not quite! This answer is incorrect.},] A collection of billions of computing devices, and packet switches interconnected by links.
+\item[feedback={Nice! This answer is correct. },fraction=50] A platform for building network applications.
+\item[feedback={Not quite! This answer is incorrect.},] A "network of networks".
+\item[feedback={Nice! This answer is correct. },fraction=50] A place I go for information, entertainment, and to communicate with people.
+\item[feedback={Not quite! This answer is incorrect.},] A collection of hardware and software components executing protocols that define the format and the order of messages exchanged between two or more communicating entities, as well as the actions taken on the transmission and/or receipt of a message or other event.
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+	multiple,
+]{1.1-3 What is a protocol? Which of the following human scenarios involve a ...}
+<strong>1.1-3 What is a protocol?</strong> Which of the following human scenarios involve a protocol (recall: "Protocols define the format, order of messages sent and received among network entities, and actions taken on message transmission, receipt")? Select one or more answers below that are correct. [Hint: more than one of the answers below are correct.]
+\item[feedback={Nice! This answer is correct.},fraction=33.33333] One person asking, and getting, the time to/from another person.
+\item[feedback={Not quite! This answer is not correct.},] A person reading a book.
+\item[feedback={Not quite! This answer is not correct.},] A person sleeping.
+\item[feedback={Nice! This answer is correct.},fraction=33.33333] Two people introducing themselves to each other.
+\item[feedback={Nice! This answer is correct.},fraction=33.33333] A student raising her/his hand to ask a really insightful question, followed by the teaching acknowledging the student, listening carefully to the question, and responding with a clear, insightful answer.  And then thanking the student for the question, since teachers <em>love</em> to get questions.
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+]{1.2-2 Link Transmission Characteristics. Which of the following physical ...}
+<strong>1.2-2 Link Transmission Characteristics. </strong>Which of the following physical layer technologies has the highest transmission rate <em>and</em> lowest bit error rate in practice?
+\item[feedback={Nice! Your answer is correct.},]* Fiber optic cable
+\item[feedback={Not quite. Your answer is incorrect.},] Coaxial cable
+\item[feedback={Not quite. Your answer is incorrect.},] Twisted pair (e.g., CAT5, CAT6)
+\item[feedback={Not quite. Your answer is incorrect.},] 802.11 WiFi Channel
+\item[feedback={Not quite. Your answer is incorrect.},] Satellite channel
+\item[feedback={Not quite. Your answer is incorrect.},] 4G/5G cellular
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+]{1.3-1 Routing versus forwarding.  Choose one of the following two definitions...}
+<strong>1.3-1 Routing versus forwarding. </strong> Choose one of the following two definitions that makes the correct distinction between routing versus forwarding.
+\item[feedback={Nice! Your answer is correct.},]* <strong>Forwarding</strong> is the local action of moving arriving packets from router’s input link to appropriate router output link, while <strong>routing</strong> is the global action of determining the source-destination paths taken by packets.
+\item[feedback={Not quite. Your answer is incorrect.},] <strong>Routing</strong> is the local action of moving arriving packets from router’s input link to appropriate router output link, while <strong>forwarding</strong> is the global action of determining the source-destination paths taken by packets.
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+	multiple,
+]{1.3-2 Packet switching versus circuit switching (1).  Which of the ...}
+<strong>1.3-2 Packet switching versus circuit switching (1). </strong> Which of the characteristics below are associated with the technique of <em> packet switching</em>? Select all correct answers. [Hint: more than one of the answers is correct].
+\item[feedback={Not quite! This answer is incorrect.},] Reserves resources needed for a call from source to destination.
+\item[feedback={Nice! This answer is correct.},fraction=25] Resources are used on demand, not reserved in advance.
+\item[feedback={Nice! This answer is correct.},fraction=25] Data may be queued before being transmitted due to other user’s data that’s also queueing for transmission.
+\item[feedback={Not quite! This answer is incorrect.},] Frequency Division Multiplexing (FDM) and Time Division Multiplexing (TDM) are two approaches for implementing this technique.
+\item[feedback={Nice! This answer is correct.},fraction=25] Congestion loss and variable end-end delays are possible with this technique.
+\item[feedback={Nice! This answer is correct.},fraction=25] This technique is used in the Internet.
+\item[feedback={Not quite! This answer is incorrect.},] This technique was the basis for the telephone call switching during the 20th century and into the beginning of this current century.
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+	multiple,
+]{1.3-3 Packet switching versus circuit switching (2).  Which of the ...}
+<strong>1.3-3 Packet switching versus circuit switching (2).</strong>  Which of the characteristics below are associated with the technique of <em>circuit switching</em>? Select all correct answers. [Hint: more than one of the answers is correct].
+\item[feedback={Nice! This answer is correct.},fraction=33.33333] Reserves resources needed for a call from source to destination.
+\item[feedback={Not quite! This answer is incorrect.},] Resources are used on demand, not reserved in advance.
+\item[feedback={Not quite! This answer is incorrect.},] Data may be queued before being transmitted due to other user’s data that’s also queueing for transmission.
+\item[feedback={Nice! This answer is correct.},fraction=33.33333] Frequency Division Multiplexing (FDM) and Time Division Multiplexing (TDM) are two approaches for implementing this technique.
+\item[feedback={Not quite! This answer is incorrect.},] Congestion loss and variable end-end delays are possible with this technique.
+\item[feedback={Not quite! This answer is incorrect.},] This technique is used in the Internet.
+\item[feedback={Nice! This answer is correct.},fraction=33.33333] This technique was the basis for the telephone call switching during the 20th century and into the beginning of this current century.
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+]{1.3-4 How many calls can be carried? Consider the circuit-switched network ...}
+<strong>1.3-4 How many calls can be carried?</strong> Consider the circuit-switched network shown in the figure below, with  four circuit switches A, B, C, and D. Suppose there are 20 circuits between A and B, 19 circuits between B and C, 15 circuits between C and D, and 16 circuits between D and A. 
+\begin{center}
+\includegraphics[width=\linewidth]{/gaia.cs.umass.edu/kurose_ross/LMS/images/Chapter_1_KC/1.3.4.png}
+\end{center}
+ What is the maximum number of connections that can be ongoing in the network at any one time? [Note: you can find more questions like this one \href{http://gaia.cs.umass.edu/kurose_ross/interactive/circuit_switching.php}{here.]}
+\item[feedback={Nice. Your answer is correct.},]* 70
+\item[feedback={Not quite. Your answer is incorrect.},] 20
+\item[feedback={Not quite. Your answer is incorrect.},] 16
+\item[feedback={Not quite. Your answer is incorrect.},] 39
+\item[feedback={Not quite. Your answer is incorrect.},] 31
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+	multiple,
+]{1.3-6 What is a network of networks?  When we say that the Internet is a “...}
+<strong>1.3-6 What is a network of networks?</strong>  When we say that the Internet is a “network of networks,” we mean? Check all that apply (hint: check two or more).
+\item[feedback={Not quite! This answer is incorrect.},] The Internet is the <em>largest</em> network ever built.
+\item[feedback={Nice! This answer is correct.},fraction=50] The Internet is made up of a lot of different networks that are interconnected to each other.
+\item[feedback={Not quite! This answer is incorrect.},] The Internet is the <em>fastest</em> network ever built.
+\item[feedback={Nice! This answer is correct.},fraction=50] The Internet is made up of access networks at the edge, tier-1 networks at the core, and interconnected regional and content provider networks as well.
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+]{1.4-02 Computing Packet Transmission Delay(1). Suppose a packet is L = 1500 ...}
+<strong>1.4-02 Computing Packet Transmission Delay(1).</strong> Suppose a packet is<em> L</em> = 1500 bytes long (one byte = 8 bits), and link transmits at R = 1 Gbps (i.e., a link can transmit bits 1,000,000,000 bits per second).  What is the transmission delay for this packet? [Note: you can find more problems like this one \href{http://gaia.cs.umass.edu/kurose_ross/interactive/one-hop-delay.php}{here}.] 
+\begin{center}
+\includegraphics[width=\linewidth]{/gaia.cs.umass.edu/kurose_ross/LMS/images/Chapter_1_KC/1.4.2.png}
+\end{center}
+
+\item[feedback={Nice!  Your answer is correct.},]* .000012 secs
+\item[feedback={Sorry, your answer isn't correct.},] .00012 secs
+\item[feedback={Sorry, your answer isn't correct.},] .0000015 secs
+\item[feedback={Sorry, your answer isn't correct.},] .0015 secs
+\item[feedback={Sorry, your answer isn't correct.},] 666,666 secs
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+]{1.4-03 Computing Packet Transmission Delay (2). Suppose a packet is L = 1200 ...}
+<strong>1.4-03 Computing Packet Transmission Delay (2).</strong> Suppose a packet is<em> L</em> = 1200 bytes long (one byte = 8 bits), and link transmits at R = 100 Mbps (i.e., a link can transmit bits 100,000,000 bits per second).  What is the transmission delay for this packet? [Note: you can find more problems like this one \href{http://gaia.cs.umass.edu/kurose_ross/interactive/one-hop-delay.php}{here}.] 
+\begin{center}
+\includegraphics[width=\linewidth]{/gaia.cs.umass.edu/kurose_ross/LMS/images/Chapter_1_KC/1.4.2.png}
+\end{center}
+
+\item[feedback={Nice! Your answer is correct.},]* .000096 secs
+\item[feedback={Sorry, your answer isn't correct.},] .00096 secs
+\item[feedback={Sorry, your answer isn't correct.},] .000015 secs
+\item[feedback={Sorry, your answer isn't correct.},] .0012 secs
+\item[feedback={Sorry, your answer isn't correct.},] 8,333 secs
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+]{1.4-04 Computing Packet Transmission Delay (3). Consider the network shown in...}
+<strong>1.4-04 Computing Packet Transmission Delay (3).</strong> Consider the network shown in the figure below, with three links, each with the specified transmission rate and link length. Assume the length of a packet is 8000 bits.What is the transmission delay at link 2?  [Note: you can find more problems like this one \href{http://gaia.cs.umass.edu/kurose_ross/interactive/one-hop-delay.php}{here}.] 
+\begin{center}
+\includegraphics[width=\linewidth]{/gaia.cs.umass.edu/kurose_ross/LMS/images/Chapter_1_KC/1.4.4.png}
+\end{center}
+
+\item[feedback={Nice! Your answer is correct.},]* 8 x 10^(-5) secs
+\item[feedback={Sorry, your answer isn't correct.},] .00096 secs
+\item[feedback={Sorry, your answer isn't correct.},] 100 secs
+\item[feedback={Sorry, your answer isn't correct.},] 12,500 secs
+\item[feedback={Sorry, your answer isn't correct.},] 12.5 secs
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+]{1.4-05 Computing Propagation Delay. Consider the network shown in the figure ...}
+<strong>1.4-05 Computing Propagation Delay.</strong> Consider the network shown in the figure below, with three links, each with the specified transmission rate and link length. Assume the length of a packet is 8000 bits. The speed of light propagation delay on each link is 3x10^8 m/secWhat is the propagation delay at (along) link 2? 
+\begin{center}
+\includegraphics[width=\linewidth]{/gaia.cs.umass.edu/kurose_ross/LMS/images/Chapter_1_KC/1.4.4.png}
+\end{center}
+
+\item[feedback={Nice! Your answer is correct.},]* .0033 secs
+\item[feedback={Sorry, your answer isn't correct.},] .33 secs
+\item[feedback={Sorry, your answer isn't correct.},] 3 secs
+\item[feedback={Sorry, your answer isn't correct.},] 3 x 10^8 secs
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+]{1.4-06 Computing throughput: a simple scenario.  What is the maximum ...}
+<strong>1.4-06 Computing throughput: a simple scenario. </strong> What is the maximum throughput achievable between sender and receiver in the scenario shown below? 
+\begin{center}
+\includegraphics[width=\linewidth]{/gaia.cs.umass.edu/kurose_ross/LMS/images/Chapter_1_KC/1.4.6.jpg}
+\end{center}
+  
+\item[feedback={Nice! Your answer is correct.},]* 1.5 Mbps
+\item[feedback={Sorry, your answer isn't correct.},] 10 Mbps
+\item[feedback={Sorry, your answer isn't correct.},] 11.5 Mbps
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+]{1.4.11 Computing maximum throughput. Consider the scenario shown below, with ...}
+<strong>1.4.11 Computing maximum throughput.</strong> Consider the scenario shown below, with 10 different servers (three shown) connected to 10 different clients over ten three-hop paths. The pairs share a common middle hop with a transmission capacity of <strong>R = 300 Mbps.</strong> The four links from the servers to the shared link have a transmission capacity of <b>R<sub>S</sub> = 90 Mbps</b>. Each of the four links from the shared middle link to a client has a transmission capacity of <b>R<sub>C</sub> = 50 Mbps.</b> <b>
+\begin{center}
+\includegraphics[width=\linewidth]{/gaia.cs.umass.edu/kurose_ross/LMS/images/Chapter_1_KC/1.4.11.png}
+\end{center}
+</b> \emph{What is the end-end maximum throughput on one of the the-hop paths, assuming all servers are sending at the maximum rate possible to their clients?}<b></b>  
+\item[feedback={Nice. Your answer is correct.},]* 30 Mbps
+\item[feedback={Not quite. Your answer is incorrect.},] 300 Mbps
+\item[feedback={Not quite. Your answer is incorrect.},] 90 Mbps
+\item[feedback={Not quite. Your answer is incorrect.},] 50 Mbps
+\item[feedback={Not quite. Your answer is incorrect.},] 440 Mbps
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+]{1.5-4 What is "encapsulation"? Which of the definitions below describe what ...}
+<strong>1.5-4 What is "encapsulation"?</strong> Which of the definitions below describe what is meant by the term "encapsulation"?
+\item[feedback={Not quite. Your answer is incorrect.},] Computing the sum of all of the bytes within a packet and placing that value in the packet header field.
+\item[feedback={Not quite. Your answer is incorrect.},] Determining the name of the destination host, translating that name to an IP address and then placing that value in a packet header field.
+\item[feedback={Nice! Your answer is correct.},]* Taking data from the layer above, adding header fields appropriate for this layer, and then placing the data in the payload field of the “packet” for that layer.
+\item[feedback={Not quite. Your answer is incorrect.},] Receiving a “packet” from the layer below, extracting the payload field, and after some internal actions possibly delivering that payload to an upper layer protocol.
+\item[feedback={Not quite. Your answer is incorrect.},] Starting a transport layer timer for a transmitted segment, and then if an ACK segment isn’t received before the timeout, placing that segment in a retransmission queue.
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+]{1.8-2. What does it mean to "use" the Internet? In 2021, the International ...}
+<span style="font-size: 12pt;"><strong>1.8-2. What does it mean to "use" the Internet?</strong> In 2021, the International Telecommunications Union (ITU) reported that 61.6\% of the worlds’s population are “Internet users”.  What does it mean to be an “Internet user” according to the ITU? To answer this question you’ll need to watch the \href{https://www.youtube.com/watch?v=-YaGGf8C1A4}{chapter 1 supplemental video on “Who Uses  the Internet?”}
+\item[feedback={Nice!  Your answer is correct.},]* <span style="font-size: 12pt;">That someone has used the Internet at least once in the last three months.
+\item[feedback={Not quite.  Your answer is incorrect.},] <span style="font-size: 12pt;">That someone has used the Internet at least once in the last one month
+\item[feedback={Not quite.  Your answer is incorrect.},] <span style="font-size: 12pt;">That someone uses the Internet at least once a week, on average.
+\item[feedback={Not quite.  Your answer is incorrect.},] <span style="font-size: 12pt;">That someone uses the Internet at least once a day, on average.
+\end{multi}
+
+\begin{multi}[
+	points=1,
+	penalty=0.33333,
+]{1.8-3.  The digital divide. Between 2010 and 2018, which of the following ...}
+<span style="font-size: 12pt;"><strong>1.8-3.  The digital divide.</strong> Between 2010 and 2018, which of the following digital divides has changed the least in the US? To answer this question you’ll need to watch the chapter 1 supplemental video on “Who Uses  the Internet?” To answer this question you’ll need to watch the \href{https://www.youtube.com/watch?v=-YaGGf8C1A4}{chapter 1 supplemental video on “Who Uses  the Internet?”}
+\item[feedback={Nice!  Your answer is correct.},]* <span style="font-size: 12pt;">The gap in Internet use between Black and Hispanic populations versus White populations in the US.<span style="font-size: 12pt;">
+\item[feedback={Not quite.  Your answer is incorrect.},] <span style="font-size: 12pt;">The gap in Internet use between rural populations versus urban populations in the US.
+\end{multi}
+
+\begin{shortanswer}[
+	points=1,
+	penalty=0.33333,
+]{1.3-5 Trying out traceroute.  Perform a traceroute from your computer (on ...}
+<strong>1.3-5 Trying out <em>traceroute. </em></strong> Perform a traceroute from your computer (on whatever network you happen to be on) to gaia.cs.umass.edu. Use traceroute (on Mac terminal) or <span style="font-family: courier new, courier;">tracert (on Windows command line) or <span style="font-family: courier new, courier;">tracepath (on a Linux command line). Enter the missing part of the name of the router just before the host gaia.cs.umass.edu is reached: ??.cs.umass.eduNote: Routing may change, so the answer here may not be correct anymore.  Also, if you are a Verizon user, there are known problems using traceroute with Verizon - if traceroute shows you two hops only to gaia.cs.umass.edu or any destination, skip this question. 
+\item[feedback={Nice! Your answer is correct.},]* nscs1bbs1
+\item[feedback={Not quite. Your answer isn't correct. Note that network configurations may change and so the earlier answer to this question in early 2023 may no longer be the right answer.  So your answer <em>could</em> be correct.},] *
+\end{shortanswer}
+
+\begin{shortanswer}[
+	points=1,
+	penalty=0.33333,
+]{1.4-07 Computing throughput.  Consider the scenario shown below, with four ...}
+<strong>1.4-07 Computing throughput. </strong> Consider the scenario shown below, with four different servers connected to four different clients over four three-hop paths. The four pairs share a common middle hop with a transmission capacity of R = 300 Mbps. The four links from the servers to the shared link have a transmission capacity of R<sub>S</sub> = 50 Mbps. Each of the four links from the shared middle link to a client has a transmission capacity of R<sub>C</sub> = 90 Mbps.What is the maximum achievable end-end throughput (an integer value, in Mbps) for each of four client-to-server pairs, assuming that the middle link is fairly shared (divides its transmission rate equally) and all servers are trying to send at their maximum rate? [Note: Give your answer as an integer, with no leading zeros, and no decimal points.] 
+\begin{center}
+\includegraphics[width=\linewidth]{/gaia.cs.umass.edu/kurose_ross/LMS/images/Chapter_1_KC/1.4.7.png}
+\end{center}
+ [Note: more questions like this one can be found \href{http://gaia.cs.umass.edu/kurose_ross/interactive/end-end-throughput-simple.php}{here}.]
+\item[feedback={Nice!  Your answer is correct.},]* 50
+\item[feedback={Sorry, your answer isn't correct.},] *
+\end{shortanswer}
+
+\begin{shortanswer}[
+	points=1,
+	penalty=0.33333,
+]{1.4-08 Computing utilization (1). Consider the scenario shown below, with ...}
+<strong>1.4-08 Computing utilization (1).</strong> Consider the scenario shown below, with four different servers connected to four different clients over four three-hop paths. The four pairs share a common middle hop with a transmission capacity of R = 300 Mbps. The four links from the servers to the shared link have a transmission capacity of R<sub>S</sub> = 50 Mbps. Each of the four links from the shared middle link to a client has a transmission capacity of R<sub>C</sub> = 90 Mbps.Assuming that the servers are all sending at their maximum rate possible, what are the link utilizations for the server links (with transmission capacity R<sub>S</sub>)? Enter your answer in a decimal form of 1.00 (if the utilization is 1) or 0.xx (if the utilization is less than 1, rounded to the closest xx). 
+\begin{center}
+\includegraphics[width=\linewidth]{/gaia.cs.umass.edu/kurose_ross/LMS/images/Chapter_1_KC/1.4.7.png}
+\end{center}
+ [Note: more questions like this one can be found \href{http://gaia.cs.umass.edu/kurose_ross/interactive/end-end-throughput-simple.php}{here}.]
+\item[feedback={Nice!  Your answer is correct.},]* 1.00
+\item[feedback={Sorry, your answer isn't correct.},] *
+\end{shortanswer}
+
+\begin{shortanswer}[
+	points=1,
+	penalty=0.33333,
+]{1.4-09 Computing utilization (2). Consider the scenario shown below, with ...}
+<strong>1.4-09 Computing utilization (2).</strong> Consider the scenario shown below, with four different servers connected to four different clients over four three-hop paths. The four pairs share a common middle hop with a transmission capacity of R = 300 Mbps. The four links from the servers to the shared link have a transmission capacity of R<sub>S</sub> = 50 Mbps. Each of the four links from the shared middle link to a client has a transmission capacity of R<sub>C</sub> = 90 Mbps.Assuming that the servers are all sending at their maximum rate possible, what are the link utilizations of the shared link (with transmission capacity R)? Enter your answer in a decimal form of 1.00 (if the utilization is 1) or 0.xx (if the utilization is less than 1, rounded to the closest xx). 
+\begin{center}
+\includegraphics[width=\linewidth]{/gaia.cs.umass.edu/kurose_ross/LMS/images/Chapter_1_KC/1.4.7.png}
+\end{center}
+ [Note: more questions like this one can be found \href{http://gaia.cs.umass.edu/kurose_ross/interactive/end-end-throughput-simple.php}{here}.]
+\item[feedback={Nice!  Your answer is correct.},]* 0.67
+\item[feedback={Sorry, your answer isn't correct.},] *
+\end{shortanswer}
+
+\begin{shortanswer}[
+	points=1,
+	penalty=0.33333,
+]{1.4-10 Computing utilization (3). Consider the scenario shown below, with ...}
+<strong>1.4-10 Computing utilization (3).</strong> Consider the scenario shown below, with four different servers connected to four different clients over four three-hop paths. The four pairs share a common middle hop with a transmission capacity of R = 300 Mbps. The four links from the servers to the shared link have a transmission capacity of R<sub>S</sub> = 50 Mbps. Each of the four links from the shared middle link to a client has a transmission capacity of R<sub>C</sub> = 90 Mbps. Assuming that the servers are all sending at their maximum rate possible, what are the link utilizations of the client links (with transmission capacity R<sub>C</sub>)? Enter your answer in a decimal form of 1.00 (if the utilization is 1) or 0.xx (if the utilization is less than 1, rounded to the closest xx). 
+\begin{center}
+\includegraphics[width=\linewidth]{/gaia.cs.umass.edu/kurose_ross/LMS/images/Chapter_1_KC/1.4.7.png}
+\end{center}
+ [Note: more questions like this one can be found \href{http://gaia.cs.umass.edu/kurose_ross/interactive/end-end-throughput-simple.php}{here}.]
+\item[feedback={Nice!  Your answer is correct.},]* 0.56
+\item[feedback={Sorry, your answer isn't correct.},] *
+\end{shortanswer}
+
+\end{quiz}
+\end{document}
