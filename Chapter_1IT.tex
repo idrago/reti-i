@@ -1,0 +1,373 @@
+% !TeX encoding = UTF-8
+% !TEX TS-program = xelatex
+\documentclass[a4paper]{article}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{moodle}
+\usepackage{hyperref,babel}
+\usepackage[cm]{fullpage}
+\begin{document}
+\begin{quiz}{Capitolo 1}
+
+\begin{matching}[points=1]{1.2-1 Velocità di rete di accesso per abbonato.}
+\textbf{1.2-1 Velocità di rete di accesso per abbonato.}
+Abbinare la rete di accesso alle velocità approssimative che un abbonato potrebbe sperimentare.
+(Nota: consulta il libro di testo dell'8ª edizione o le diapositive).
+
+\item Ethernet \answer Cablato. Fino a 100's di Gbps per collegamento.
+\item 802.11 WiFi \answer Senza fili. Dai 10's ai 100's di Mbps per dispositivo.
+\item Rete di accesso via cavo \answer Cablato. Fino a 10's o 100's di Mbps in download per utente.
+\item DSL \answer Cablato. Fino a 10's di Mbps in download per utente.
+\item 4G cellulare LTE \answer Senza fili. Fino a 10's di Mbps per dispositivo.
+\item \answer Senza fili, fino a 10's di Kbps per dispositivo.
+\item \answer Cablato. Fino a 1 Tbps per collegamento.
+\end{matching}
+
+\begin{matching}[points=1]{1.3-7 Commutazione di pacchetto o commutazione di circuito?}
+\textbf{1.3-7 Commutazione di pacchetto o commutazione di circuito?}
+Considera uno scenario in cui 5 utenti vengono multiplexati su un canale da 10 Mbps.
+Sotto i vari scenari di seguito, abbina lo scenario alla scelta migliore tra commutazione di circuito o commutazione di pacchetto.
+
+\item Ciascun utente genera traffico a un tasso medio di 2,1 Mbps, generando traffico a un tasso di 15 Mbps durante la trasmissione \answer Nessuna delle due funziona bene in questo scenario di sovraccarico.
+\item Ciascun utente genera traffico a un tasso medio di 2 Mbps, generando traffico a un tasso di 2 Mbps durante la trasmissione \answer Commutazione di circuito.
+\item Ciascun utente genera traffico a un tasso medio di 0,21 Mbps, generando traffico a un tasso di 15 Mbps durante la trasmissione \answer Commutazione di pacchetto.
+\end{matching}
+
+\begin{matching}[points=1]{1.4-01 Componenti del ritardo dei pacchetti.}
+\textbf{1.4-01 Componenti del ritardo dei pacchetti.}
+Abbinare la descrizione di ciascun componente del ritardo dei pacchetti al suo nome.
+
+\item Tempo necessario per eseguire un controllo di integrità, cercare le informazioni del pacchetto e spostare il pacchetto da un collegamento di ingresso a un collegamento di uscita in un router. \answer Ritardo di elaborazione
+\item Tempo trascorso in attesa nei buffer per la trasmissione. \answer Ritardo di accodamento
+\item Tempo trascorso nella trasmissione dei bit dei pacchetti nel collegamento. \answer Ritardo di trasmissione
+\item Tempo necessario affinché i bit si propaghino fisicamente attraverso il mezzo di trasmissione dall'estremità di un collegamento all'altra. \answer Ritardo di propagazione
+\end{matching}
+
+\begin{matching}[points=1]{1.5-1 Livelli nello stack di protocolli Internet.}
+\textbf{1.5-1 Livelli nello stack di protocolli Internet.}
+Abbinare la funzione di un livello nello stack di protocolli Internet al nome del livello che implementa quella funzione.
+
+\item Protocolli che fanno parte di un'applicazione di rete distribuita. \answer Livello dell'applicazione (Application Layer)
+\item Trasferimento di dati tra un processo e un altro processo (tipicamente su host diversi). \answer Livello di trasporto (Transport Layer)
+\item Consegna di datagrammi da un host sorgente a un host destinatario. \answer Livello di rete (Network Layer)
+\item Trasferimento di dati tra dispositivi di rete adiacenti. \answer Livello di collegamento (Link Layer)
+\item Trasferimento di bit nel mezzo di trasmissione. \answer Livello fisico (Physical Layer)
+\end{matching}
+
+% Here
+
+\begin{matching}[points=1]{1.5-2 Cosa viene veramente chiamato un "pacchetto"?}
+\textbf{1.5-2 Cosa viene veramente chiamato un "pacchetto"?}
+Abbinare il nome di uno strato di Internet all'unità di dati che viene scambiata tra le entità del protocollo a quel livello, utilizzando il menu a discesa.
+
+\item Application layer (Livello dell'applicazione) - Messaggio
+\item Transport layer (Livello di trasporto) - Segmento
+\item Network layer (Livello di rete) - Datagramma
+\item Link layer (Livello di collegamento) - Frame
+\item Physical layer (Livello fisico) - Bit
+\end{matching}
+
+
+\begin{matching}[points=1]{1.5-3 Intestazioni di protocollo.}
+\textbf{1.5-3 Intestazioni di protocollo.}
+Considera la figura qui sotto, che mostra un'intestazione di frame a livello di collegamento da un host a un router. Sono mostrati tre campi di intestazione. Abbinare il nome di un'intestazione con l'etichetta dell'intestazione mostrata nella figura.
+
+\begin{center}
+\includegraphics[width=\linewidth]{figs/1.5.3.jpg}
+\end{center}
+
+\item Intestazione $H_1$ - Livello di collegamento
+\item Intestazione $H_2$ - Livello di rete
+\item Intestazione $H_3$ - Livello di trasporto
+\item Livello dell'applicazione
+\item Livello fisico
+\end{matching}
+
+
+\begin{matching}[points=1]{1.6-1 Difese di sicurezza.}
+\textbf{1.6-1 Difese di sicurezza.}
+Abbinare la descrizione di una difesa di sicurezza con il suo nome.
+
+\item Specialized "middleboxes" che filtrano o bloccano il traffico, ispezionando le ispezioni dei contenuti dei pacchetti \answer Firewall
+\item Fornisce riservatezza codificando i contenuti \answer Crittografia
+\item Usato per rilevare la manipolazione o la modifica dei contenuti dei messaggi e per identificare l'origine di un messaggio. \answer Firme digitali
+\item Limitare l'uso di risorse o capacità a utenti specifici. \answer Controllo dell'accesso
+\item Dimostrare di essere chi dici di essere. \answer Autenticazione
+\end{matching}
+
+
+\begin{matching}[points=1]{1.7-1 Storia delle reti - quando è successo?}
+\textbf{1.7-1 Storia delle reti - quando è successo?}
+Abbinare l'evento di rete all'intervallo temporale in cui si è verificato l'evento.
+
+\item Studi iniziali sulla commutazione di pacchetto di Baran, Davies, Kleinrock. \answer Inizio degli anni '60
+\item Primo nodo ARPAnet operativo. \answer Fine degli anni '60
+\item Internetting: i ricercatori DARPA collegano tre reti insieme. \answer Anni '70
+\item Il Protocollo Internet (IP) è standardizzato nella RFC 791. \answer Inizio degli anni '80
+\item Il controllo della congestione viene aggiunto al protocollo TCP. \answer Fine degli anni '80
+\item L'avvio del World Wide Web (nota: la progettazione del WWW è iniziata alla fine del decennio precedente). \answer Anni '90
+\item Inizio delle reti definite dal software. \answer 2000-2010
+\item Il numero di dispositivi connessi a Internet senza fili supera il numero di dispositivi connessi con cavo. \answer 2010-2020
+\end{matching}
+
+\begin{matching}[points=1]{1.8-1. "Chi controlla Internet?"}
+\textbf{1.8-1. "Chi controlla Internet?"}
+Abbinare un nome di organizzazione di seguito al ruolo dell'organizzazione nella governance di Internet. Per rispondere a questa domanda, è necessario guardare il \href{https://www.youtube.com/watch?v=xrd4hD_9fS8}{video supplementare su "Chi controlla Internet?"}.
+
+\item Internet Governance Forum (IGF) - Un organo di deliberazione multistakeholder, convocato dalle Nazioni Unite, che non prende decisioni ma informa ed ispira coloro che lo fanno.
+\item Internet Engineering Task Force (IETF) - Imposta gli standard tecnici per l'infrastruttura di Internet, in particolare protocolli, requisiti dei dispositivi e formati dei dati, in più di 9000 Richieste di Commenti (RFC).
+\item 3rd Generation Partnership Project (3GPP) - Imposta gli standard tecnici per i sistemi cellulari mobili 3G, 4G e 5G.
+\item Internet Corporation for Assigned Names and Numbers (ICANN) - Gestisce (assegna, giudica) i nomi di dominio Internet e gestisce il livello radice del DNS.
+\item Institute for Electrical and Electronics Engineers - Imposta lo standard tecnico per gli standard Ethernet e WiFi a livello di collegamento.
+\end{matching}
+
+\begin{multi}[points=1,multiple]{1.1-3 Che cos'è un protocollo?}
+\textbf{1.1-3 Che cos'è un protocollo?} 
+Quali dei seguenti scenari umani coinvolgono un protocollo 
+(ricorda: "I protocolli definiscono il formato, l'ordine dei messaggi inviati e ricevuti tra le entità di rete e le azioni intraprese sulla trasmissione e la ricezione dei messaggi")? 
+Seleziona una o più risposte corrette di seguito. [Suggerimento: più di una delle risposte di seguito sono corrette.]
+
+\item[fraction=33.33333] Una persona chiede e ottiene l'orario da/per un'altra persona.
+\item Una persona legge un libro.
+\item Una persona sta dormendo.
+\item[fraction=33.33333] Due persone si presentano reciprocamente.
+\item[fraction=33.33333] Uno studente alza la mano per fare una domanda davvero perspicace, seguita dall'insegnante che riconosce lo studente, ascolta attentamente la domanda e risponde con una risposta chiara e perspicace. E poi ringrazia lo studente per la domanda, poiché gli insegnanti amano ricevere domande.
+\end{multi}
+
+\begin{multi}[points=1]{1.2-2 Caratteristiche di trasmissione del collegamento.}
+\textbf{1.2-2 Caratteristiche di trasmissione del collegamento.}
+Quale delle seguenti tecnologie del livello fisico ha la velocità di trasmissione più elevata e il tasso di errore sui bit più basso in pratica?
+\item* Cavo a fibra ottica
+\item Cavo coassiale
+\item Cavo a coppie intrecciate (ad esempio, CAT5, CAT6)
+\item Canale 802.11 WiFi
+\item Canale satellitare
+\item Rete cellulare 4G/5G
+\end{multi}
+
+\begin{multi}[points=1]{1.3-1 Routing rispetto a forwarding.}
+\textbf{1.3-1 Routing rispetto a forwarding.} 
+Scegli una delle due definizioni seguenti che fa la distinzione corretta tra routing e forwarding.
+\item* \textbf{Forwarding} è l'azione locale di spostare i pacchetti in arrivo dal collegamento di ingresso del router al collegamento di uscita appropriato del router, mentre \textbf{routing} è l'azione globale di determinare i percorsi sorgente-destinazione seguiti dai pacchetti.
+\item \textbf{Routing} è l'azione locale di spostare i pacchetti in arrivo dal collegamento di ingresso del router al collegamento di uscita appropriato del router, mentre \textbf{forwarding} è l'azione globale di determinare i percorsi sorgente-destinazione seguiti dai pacchetti.
+\end{multi}
+
+\begin{multi}[points=1,multiple]{1.3-2 Commutazione di pacchetto rispetto a commutazione di circuito (1).}
+\textbf{1.3-2 Commutazione di pacchetto rispetto a commutazione di circuito (1).} 
+Quali delle caratteristiche seguenti sono associate alla tecnica di commutazione di pacchetto? Seleziona tutte le risposte corrette. [Suggerimento: più di una delle risposte è corretta].
+\item Riserva le risorse necessarie per una chiamata da origine a destinazione.
+\item[fraction=25] Le risorse vengono utilizzate su richiesta, non prenotate in anticipo.
+\item[fraction=25] I dati possono essere messi in coda prima di essere trasmessi a causa dei dati di altri utenti che sono anche in coda per la trasmissione.
+\item La Divisione in Frequenza Multiplexing (FDM) e la Divisione in Temporale Multiplexing (TDM) sono due approcci per implementare questa tecnica.
+\item[fraction=25] La perdita per congestione e variazioni delle latenze da un'estremità all'altra sono possibili con questa tecnica.
+\item[fraction=25] Questa tecnica è utilizzata su Internet.
+\item Questa tecnica è stata la base per la commutazione delle chiamate telefoniche durante il 20º secolo e all'inizio di questo secolo attuale.
+\end{multi}
+
+\begin{multi}[points=1,multiple]{1.3-3 Commutazione di pacchetto rispetto a commutazione di circuito (2).}
+\textbf{1.3-3 Commutazione di pacchetto rispetto a commutazione di circuito (2).} 
+Quali delle caratteristiche seguenti sono associate alla tecnica di commutazione di circuito? Seleziona tutte le risposte corrette. [Suggerimento: più di una delle risposte è corretta].
+\item[fraction=33.33333] Riserva le risorse necessarie per una chiamata da origine a destinazione.
+\item Le risorse vengono utilizzate su richiesta, non prenotate in anticipo.
+\item I dati possono essere messi in coda prima di essere trasmessi a causa dei dati di altri utenti che sono anche in coda per la trasmissione.
+\item[fraction=33.33333] La Divisione in Frequenza Multiplexing (FDM) e la Divisione in Temporale Multiplexing (TDM) sono due approcci per implementare questa tecnica.
+\item La perdita per congestione e variazioni delle latenze da un'estremità all'altra sono possibili con questa tecnica.
+\item Questa tecnica è utilizzata su Internet.
+\item[fraction=33.33333] Questa tecnica è stata la base per la commutazione delle chiamate telefoniche durante il 20º secolo e all'inizio di questo secolo attuale.
+\end{multi}
+
+\begin{multi}[points=1]{1.3-4 Quante chiamate possono essere gestite?}
+\textbf{1.3-4 Quante chiamate possono essere gestite?} 
+Considera la rete a commutazione di circuito mostrata nella figura sottostante, con quattro commutatori di circuito A, B, C e D. Supponi che ci siano 20 circuiti tra A e B, 19 circuiti tra B e C, 15 circuiti tra C e D e 16 circuiti tra D e A. 
+\begin{center}
+\includegraphics[width=\linewidth]{figs/1.3.4.png}
+\end{center}
+Qual è il numero massimo di connessioni che possono essere attive nella rete contemporaneamente?
+\item* 70
+\item 20
+\item 16
+\item 39
+\item 31
+\end{multi}
+
+\begin{multi}[points=1,multiple]{1.3-6 Cos'è una rete di reti?}
+\textbf{1.3-6 Cos'è una rete di reti?}  
+Quando diciamo che Internet è una "rete di reti," intendiamo? Seleziona tutto ciò che si applica (suggerimento: seleziona almeno due risposte).
+\item Internet è la rete più grande mai costruita.
+\item[fraction=50] Internet è costituita da molte reti diverse interconnesse tra loro.
+\item Internet è la rete più veloce mai costruita.
+\item[fraction=50] Internet è costituita da reti di accesso al margine, reti di livello 1 al nucleo e reti regionali e dei fornitori di contenuti interconnesse.
+\end{multi}
+
+\begin{multi}[points=1]{1.4-02 Calcolo del ritardo di trasmissione del pacchetto (1).}
+\textbf{1.4-02 Calcolo del ritardo di trasmissione del pacchetto (1).} 
+Supponi che un pacchetto abbia una lunghezza di $L$=1500 byte (un byte = 8 bit) e il collegamento trasmette a $R$=1 Gbps (cioè, un collegamento può trasmettere 1.000.000.000 bit al secondo).  
+Qual è il ritardo di trasmissione per questo pacchetto?
+\begin{center}
+\includegraphics[width=\linewidth]{figs/1.4.2.png}
+\end{center}
+\item* .000012 secondi
+\item .00012 secondi
+\item .0000015 secondi
+\item .0015 secondi
+\item 666,666 secondi
+\end{multi}
+
+\begin{multi}[points=1]{1.4-03 Calcolo del ritardo di trasmissione del pacchetto (2).}
+\textbf{1.4-03 Calcolo del ritardo di trasmissione del pacchetto (2).} 
+Supponi che un pacchetto abbia una lunghezza di $L$ = 1200 byte (un byte = 8 bit) e il collegamento trasmette a $R$ = 100 Mbps (cioè, un collegamento può trasmettere 100.000.000 bit al secondo).  Qual è il ritardo di trasmissione per questo pacchetto?
+\begin{center}
+\includegraphics[width=\linewidth]{figs/1.4.2.png}
+\end{center}
+\item* .000096 secondi
+\item .00096 secondi
+\item .000015 secondi
+\item .0012 secondi
+\item 8,333 secondi
+\end{multi}
+
+\begin{multi}[points=1]{1.4-04 Calcolo del ritardo di trasmissione del pacchetto (3).}
+\textbf{1.4-04 Calcolo del ritardo di trasmissione del pacchetto (3).} 
+Considera la rete mostrata nella figura sottostante, con tre collegamenti, ciascuno con la velocità di trasmissione e la lunghezza del collegamento specificate. Supponi che la lunghezza di un pacchetto sia di 8000 bit. Qual è il ritardo di trasmissione al collegamento 2? 
+\begin{center}
+\includegraphics[width=\linewidth]{figs/1.4.4.png}
+\end{center}
+\item* $8 x 10^(-5)$ secondi
+\item .00096 secondi
+\item 100 secondi
+\item 12,500 secondi
+\item 12.5 secondi
+\end{multi}
+
+\begin{multi}[points=1]{1.4-05 Calcolo del ritardo di propagazione.}
+\textbf{1.4-05 Calcolo del ritardo di propagazione.} 
+Considera la rete mostrata nella figura sottostante, con tre collegamenti, ciascuno con la velocità di trasmissione e la lunghezza del collegamento specificate. Supponi che la lunghezza di un pacchetto sia di 8000 bit. Il ritardo di propagazione della luce su ciascun collegamento è di $3x10^8$ m/s.
+Qual è il ritardo di propagazione nel collegamento 2? 
+\begin{center}
+\includegraphics[width=\linewidth]{figs/1.4.4.png}
+\end{center}
+
+\item* .0033 secondi
+\item .33 secondi
+\item 3 secondi
+\item $3 x 10^8$ secondi
+\end{multi}
+
+\begin{multi}[points=1]{1.4-06 Calcolo della larghezza di banda: uno scenario semplice.}
+\textbf{1.4-06 Calcolo della larghezza di banda: uno scenario semplice.} 
+Qual è la larghezza di banda massima raggiungibile tra mittente e destinatario nello scenario mostrato di seguito? 
+\begin{center}
+\includegraphics[width=\linewidth]{figs/1.4.6.jpg}
+\end{center}
+%  
+\item* 1,5 Mbps
+\item 10 Mbps
+\item 11,5 Mbps
+\end{multi}
+
+\begin{multi}[points=1]{1.4.11 Calcolo della larghezza di banda massima.}
+\textbf{1.4.11 Calcolo della larghezza di banda massima.} 
+Considera lo scenario mostrato di seguito, con 10 diversi server (tre mostrati) collegati a 10 diversi client su dieci percorsi di tre hop. Le coppie condividono un hop centrale comune con una capacità di trasmissione di \textbf{R = 300 Mbps.} I quattro collegamenti dai server al link centrale condiviso hanno una capacità di trasmissione di $R_C$ = 90 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 50 Mbps.
+\begin{center}
+\includegraphics[width=\linewidth]{figs/1.4.11.png}
+\end{center}
+
+\emph{Qual è la larghezza di banda massima end-to-end su uno dei percorsi di tre hop, supponendo che tutti i server stiano inviando alla massima velocità possibile ai propri client?}
+\item* 30 Mbps
+\item 300 Mbps
+\item 90 Mbps
+\item 50 Mbps
+\item 440 Mbps
+\end{multi}
+
+\begin{multi}[points=1]{1.5-4 Cosa si intende per "incapsulamento"?}
+\textbf{1.5-4 Cosa si intende per "incapsulamento"?} 
+Quali delle definizioni seguenti descrivono cosa si intende per "incapsulamento"?
+\item Calcolare la somma di tutti i byte all'interno di un pacchetto e inserire quel valore nel campo intestazione del pacchetto.
+\item Determinare il nome dell'host di destinazione, tradurre quel nome in un indirizzo IP e quindi inserire quel valore nel campo intestazione di un pacchetto.
+\item* Prendere i dati dal livello superiore, aggiungere campi intestazione appropriati per questo livello e quindi inserire i dati nel campo payload del "pacchetto" per quel livello.
+\item Ricevere un "pacchetto" dal livello sottostante, estrarre il campo payload e, dopo alcune azioni interne, possibilmente consegnare quel payload a un protocollo del livello superiore.
+\item Avviare un timer del livello di trasporto per un segmento trasmesso e, se non si riceve un segmento ACK prima della scadenza, inserire quel segmento in una coda di ritrasmissione.
+\end{multi}
+
+\begin{multi}[points=1]{1.8-2. Cosa significa "usare" Internet?}
+\textbf{1.8-2. Cosa significa "usare" Internet?} 
+Nel 2021, l'Unione Internazionale delle Telecomunicazioni (ITU) ha riportato che il 61,6\% della popolazione mondiale è "utente di Internet". Cosa significa essere un "utente di Internet" secondo l'ITU? 
+Per rispondere a questa domanda, dovrai guardare il \href{https://www.youtube.com/watch?v=-YaGGf8C1A4}{video supplementare del Capitolo 1 su "Chi Usa Internet?"}
+\item* Che qualcuno abbia utilizzato Internet almeno una volta negli ultimi tre mesi.
+\item Che qualcuno abbia utilizzato Internet almeno una volta negli ultimi tre mesi.
+\item Che qualcuno utilizzi Internet almeno una volta alla settimana, in media.
+\item Che qualcuno utilizzi Internet almeno una volta al giorno, in media.
+\end{multi}
+
+\begin{multi}[points=1]{1.8-3. Il digital divide.}
+\textbf{1.8-3. Il digital divide.} 
+Tra il 2010 e il 2018, quale delle seguenti divisioni digitali negli Stati Uniti è cambiata di meno?
+Per rispondere a questa domanda dovrai guardare il \href{https://www.youtube.com/watch?v=-YaGGf8C1A4}{video supplementare del Capitolo 1 su "Chi Usa Internet?"}
+\item* Il divario nell'uso di Internet tra le popolazioni nere e ispaniche rispetto alle popolazioni bianche negli Stati Uniti.
+\item Il divario nell'uso di Internet tra le popolazioni rurali e quelle urbane negli Stati Uniti.
+\end{multi}
+
+\begin{shortanswer}[points=1]{1.3-5 Provare il traceroute.}
+\textbf{1.3-5 Provare il \textit{traceroute}.} 
+Esegui un \textit{traceroute} dal tuo computer (su qualsiasi rete tu sia) a gaia.cs.umass.edu. Usa il comando \textit{traceroute} (nel terminale di Linux o Mac) o \textit{tracert} (nella riga di comando di Windows). 
+
+Inserisci la parte mancante del nome del router appena prima di raggiungere l'host gaia.cs.umass.edu: ??.cs.umass.edu
+\item* nscs1bbs1
+\end{shortanswer}
+
+\begin{shortanswer}[points=1]{1.4-07 Calcolo della larghezza di banda.}
+\textbf{1.4-07 Calcolo della larghezza di banda.} 
+Considera lo scenario mostrato di seguito, con quattro diversi server collegati a quattro diversi client su quattro percorsi di tre hop. Le quattro coppie condividono un hop centrale comune con una capacità di trasmissione di $R$ = 300 Mbps. I quattro collegamenti dai server al link condiviso hanno una capacità di trasmissione di $R_C$ = 50 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 90 Mbps. Qual è la larghezza di banda massima end-to-end (un valore intero, in Mbps) per ciascuna delle quattro coppie client-server, supponendo che il link centrale sia condiviso in modo equo (divida la sua velocità di trasmissione in modo uguale) e che tutti i server stiano cercando di inviare alla massima velocità? 
+[Nota: Fornisci la tua risposta come un numero intero, senza zeri iniziali e senza punti decimali.]
+\begin{center}
+\includegraphics[width=\linewidth]{figs/1.4.7.png}
+\end{center}
+\item* 50
+\end{shortanswer}
+
+\begin{shortanswer}[points=1]{1.4-08 Calcolo dell'utilizzo (1).}
+\textbf{1.4-08 Calcolo dell'utilizzo (1).} 
+Considera lo scenario mostrato di seguito, con quattro diversi server collegati a quattro diversi client su quattro percorsi di tre hop. Le quattro coppie condividono un hop centrale comune con una capacità di trasmissione di $R$ = 300 Mbps. I quattro collegamenti dai server al link condiviso hanno una capacità di trasmissione di $R_S$ = 50 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 90 Mbps. 
+
+Supponendo che i server stiano tutti inviando alla massima velocità possibile, qual è l'utilizzo dei link del server (con capacità di trasmissione $R_C$)? 
+
+Inserisci la tua risposta in forma decimale come 1.00 (se l'utilizzo è 1) o 0.xx (se l'utilizzo è inferiore a 1, arrotondato all'xx più vicino). 
+
+\begin{center}
+\includegraphics[width=\linewidth]{figs/1.4.7.png}
+\end{center}
+\item* 1.00
+\end{shortanswer}
+
+\begin{shortanswer}[points=1]{1.4-09 Calcolo dell'utilizzo (2).}
+\textbf{1.4-09 Calcolo dell'utilizzo (2).} 
+Considera lo scenario mostrato di seguito, con quattro diversi server collegati a quattro diversi client su quattro percorsi di tre hop. Le quattro coppie condividono un hop centrale comune con una capacità di trasmissione di R = 300 Mbps. I quattro collegamenti dai server al link condiviso hanno una capacità di trasmissione di $R_S$ = 50 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 90 Mbps. 
+
+Supponendo che i server stiano tutti inviando alla massima velocità possibile, qual è l'utilizzo del link condiviso (con capacità di trasmissione $R_C$)? 
+
+Inserisci la tua risposta in forma decimale come 1.00 (se l'utilizzo è 1) o 0.xx (se l'utilizzo è inferiore a 1, arrotondato all'xx più vicino). 
+
+\begin{center}
+\includegraphics[width=\linewidth]{figs/1.4.7.png}
+\end{center}
+\item* 0.67
+\end{shortanswer}
+
+
+\begin{shortanswer}[points=1]{1.4-10 Calcolo dell'utilizzo (3).}
+\textbf{1.4-10 Calcolo dell'utilizzo (3).} 
+Considera lo scenario mostrato di seguito, con quattro diversi server collegati a quattro diversi client su quattro percorsi di tre hop. Le quattro coppie condividono un hop centrale comune con una capacità di trasmissione di R = 300 Mbps. I quattro collegamenti dai server al link condiviso hanno una capacità di trasmissione di $R_S$ = 50 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 90 Mbps. 
+
+Supponendo che i server stiano tutti inviando alla massima velocità possibile, qual è l'utilizzo dei link del client (con capacità di trasmissione $R_C$)? 
+
+Inserisci la tua risposta in forma decimale come 1.00 (se l'utilizzo è 1) o 0.xx (se l'utilizzo è inferiore a 1, arrotondato all'xx più vicino).
+
+\begin{center}
+\includegraphics[width=\linewidth]{figs/1.4.7.png}
+\end{center}
+\item* 0.56
+\end{shortanswer}
+    
+\end{quiz}
+\end{document}
