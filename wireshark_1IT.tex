@@ -1,0 +1,74 @@
+\documentclass[a4paper]{article}
+\usepackage{fontspec}
+\usepackage{moodle}
+\usepackage{hyperref,babel}
+\usepackage[cm]{fullpage}
+\begin{document}
+\begin{quiz}{Wireshark-Intro-1}
+
+\begin{multi}[points=1,multiple]{Intro-1 Lab: Q01 Introduzione e protocolli presenti nella tracia.}
+\textbf{Intro-1 Lab: Q01 Introduzione e protocolli presenti nella tracia.}
+
+Le risposte alle domande in questo modulo si basano sui pacchetti nel file \emph{wireshark-traces-8.1.zip}.
+
+Quali dei seguenti protocolli appaiono (cioè sono elencati nella colonna ``protocollo'' di Wireshark) nella tracia?
+
+\item[fraction=33.33333] TCP
+\item QUIC
+\item[fraction=33.33333] HTTP
+\item DNS
+\item UDP
+\item[fraction=33.33333] TLSv1.2
+\end{multi}
+
+\begin{shortanswer}[points=1]{Intro-1 Lab: Q02 Tempo di risposta HTTP.}
+\textbf{Intro-1 Lab: Q02 Tempo di risposta HTTP.}
+Quanto tempo è trascorso dal momento in cui il messaggio HTTP GET è stato inviato fino a quando è stato ricevuto il messaggio HTTP OK di risposta?
+
+Per impostazione predefinita, il valore della colonna ``Tempo'' nella finestra di elencazione dei pacchetti è l'ammontare di tempo, in secondi, trascorso dal momento in cui è iniziato la cattura di Wireshark. Inserisci la tua risposta nella forma "0,xyz" (senza virgolette) dove ``xyz'' rappresenta le prime tre cifre decimali del tempo di risposta HTTP. Calcola la tua risposta usando sei cifre decimali di precisione temporale, e poi inserisci la tua risposta arrotondata (non troncata) a tre cifre decimali:
+
+\item 0,029
+\end{shortanswer}
+
+\begin{shortanswer}[points=1]{Intro-1 Lab: Q03.1 Indirizzo IP del server.}
+\textbf{Intro-1 Lab: Q03.1 Indirizzo IP del server.}
+Qual è l'indirizzo Internet (IP) del server web gaia.cs.umass.edu (noto anche come www-net.cs.umass.edu)?
+
+Inserisci l'indirizzo in notazione decimale puntata del tipo ``w.x.y.z,'' dove ``w, x, y'' e ``z'' sono interi compresi tra 0 e 255. Ometti zeri iniziali (tranne se il valore di ``w, x, y'' o ``z'' è zero); include i punti nella tua risposta:
+
+\item 128.119.245.12
+\end{shortanswer}
+
+\begin{shortanswer}[points=1]{Intro-1 Lab: Q03.2 Indirizzo IP del client.}
+\textbf{Intro-1 Lab: Q03.2 Indirizzo IP del client.}
+Qual è l'indirizzo Internet (IP) del client che ha inviato la richiesta HTTP al server gaia.cs.umass.edu?
+
+Inserisci l'indirizzo del client in notazione decimale puntata del tipo ``w.x.y.z,'' dove ``w, x, y'' e ``z'' sono interi compresi tra 0 e 255. Ometti zeri iniziali (tranne se il valore di ``w, x, y'' o ``z'' è zero); include i punti nella tua risposta:
+
+\item 10.0.0.44
+\end{shortanswer}
+
+\begin{multi}[points=1]{Intro-1 Lab: Q04 Quale web browser?}
+\textbf{Intro-1 Lab: Q04 Quale web browser?}
+Espandi le informazioni sul messaggio HTTP nella finestra ``Dettagli del pacchetto selezionato'' di Wireshark (vedi Figura 3 nella descrizione del laboratorio). Quale tipo di web browser ha emesso la richiesta HTTP? La risposta è mostrata alla fine delle informazioni relative al campo "User-Agent:".
+
+\item Safari
+\item* Firefox
+\item Microsoft Edge
+\item Nessuna di queste risposte.
+\end{multi}
+
+\begin{multi}[points=1]{Intro-1 Lab: Q05 Numero di porta.}
+\textbf{Intro-1 Lab: Q05 Numero di porta.}
+Espandi le informazioni sul Protocollo TCP nella finestra ``Dettagli del pacchetto selezionato'' di Wireshark (vedi Figura 3 nella descrizione del laboratorio) in modo da poter vedere i campi nel segmento TCP che trasporta il messaggio HTTP.
+
+Qual è il numero di porta di destinazione (il numero che segue "Dest Port:" per il segmento TCP che contiene la richiesta HTTP) a cui questa richiesta HTTP viene inviata?
+
+\item* 80
+\item 23
+\item 242
+\item 53962
+\end{multi}
+
+\end{quiz}
+\end{document}

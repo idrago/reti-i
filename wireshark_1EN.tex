@@ -1,0 +1,74 @@
+\documentclass[a4paper]{article}
+\usepackage{fontspec}
+\usepackage{moodle}
+\usepackage{hyperref,babel}
+\usepackage[cm]{fullpage}
+\begin{document}
+\begin{quiz}{Wireshark-Intro-1}
+
+\begin{multi}[points=1,multiple]{Intro-1 Lab: Q01 Introduction and protocols seen in trace.}
+\textbf{Intro-1 Lab: Q01 Introduction and protocols seen in trace.}
+
+This module allows you to enter answers for the questions posed in a wireshark-lab. The Wireshark lab description, questions, context and helpful hints are in the introductory Wireshark lab writeup. The answers to the questions in this module are based on packets in the trace file \emph{wireshark-traces-8.1.zip}
+
+Which of the following protocols appear (i.e., are listed in the Wireshark ``protocol'' column) in the trace file? 
+
+\item[fraction=33.33333] TCP
+\item QUIC
+\item[fraction=33.33333] HTTP
+\item DNS
+\item UDP
+\item[fraction=33.33333] TLSv1.2
+\end{multi}
+
+\begin{shortanswer}[points=1]{Intro-1 Lab: Q02 HTTP response time.}
+\textbf{Intro-1 Lab: Q02 HTTP response time.} 
+How long did it take from when the HTTP GET message was sent until the HTTP OK reply was received? 
+
+By default, the value of the Time column in the packet-listing window is the amount of time, in seconds, since Wireshark tracing began.  Enter your answer in the form of ``0.\emph{xyz}'' (without quotes) where \emph{xyz} are the three first decimal places of the HTTP response time. Calculate your answer using the six decimal places of time precision, and then enter your answer rounded (not truncated) to three subsecond decimal places, 0.\emph{xyz}:
+
+\item 0.029
+\end{shortanswer}
+
+\begin{shortanswer}[points=1]{Intro-1 Lab: Q03.1 Server IP address.}
+\textbf{Intro-1 Lab: Q03.1 Server IP address.} 
+What is the Internet (IP) address of the web server gaia.cs.umass.edu (also known as www-net.cs.umass.edu)? 
+
+Enter the address in so-called dotted decimal notation of the form \emph{w.x.y.z,} where  \emph{w, x, y}, and \emph{z} are integers between 0 and 255. Omit leading zeros (except if the value of \emph{w, x, y} or \emph{z} is zero); include the periods in your answer: 
+
+\item 128.119.245.12
+\end{shortanswer}
+
+\begin{shortanswer}[points=1]{Intro-1 Lab: Q03.2 Client IP address.}
+\textbf{Intro-1 Lab: Q03.2 Client IP address.}  
+What is the Internet (IP) address of the client that sent the HTTP request to the gaia.cs.umass.edu server? 
+
+Enter the client's address in so-called dotted decimal notation of the form \emph{w.x.y.z,} where \emph{w, x, y}, and \emph{z} are integers between 0 and 255. Omit leading zeros (except if the value of \emph{w, x, y} or \emph{z} is zero); include the periods in your answer:    
+
+\item 10.0.0.44
+\end{shortanswer}
+
+\begin{multi}[points=1]{Intro-1 Lab: Q04 Which web browser?}
+\textbf{Intro-1 Lab: Q04 Which web browser?}  
+Expand the information about the HTTP message in the Wireshark ``Details of selected packet'' window (see Figure 3 in the lab writeup) so you can see the fields in the HTTP GET request message. What type of Web browser issued the HTTP request? The answer is shown at the right end of the information following the ``User-Agent:'' field in the expanded HTTP message display.
+
+\item Safari
+\item* Firefox
+\item Microsoft Edge
+\item None of these answers.
+\end{multi}
+
+\begin{multi}[points=1]{Intro-1 Lab: Q05 What port number?}
+\textbf{Intro-1 Lab: Q05 What port number?} 
+Expand the information about the Transmission Control Protocol in the Wireshark ``Details of selected packet'' window (see Figure 3 in the lab writeup) so you can see the fields in the TCP segment carrying the HTTP message.  
+
+What is the destination port number (the number following ``Dest Port:'' for the TCP segment containing the HTTP request) to which this HTTP request is being sent? 
+
+\item* 80
+\item 23
+\item 242
+\item 53962
+\end{multi}
+
+\end{quiz}
+\end{document}
