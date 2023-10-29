@@ -1,17 +1,31 @@
 \documentclass[a4paper]{article}
-\usepackage{fontspec}
+\usepackage{geometry}
+%\usepackage[nostamp,tikz,svg]{moodle}
+\usepackage[handout,nostamp,tikz,svg]{moodle}
+\pagestyle{empty}
+ \geometry{
+ a4paper,
+ total={175mm,260mm},
+ left=15mm,
+ top=15mm,
+ }
+
+ \usepackage{fontspec}
 \usepackage{graphicx}
-\usepackage{moodle}
 \usepackage{hyperref,babel}
 \usepackage[cm]{fullpage}
+\usepackage{fancyvrb}
+
+\pagestyle{empty}
+
 \begin{document}
 \begin{quiz}{Capitolo 1}
 
 
 \begin{multi}[points=1,shuffle=true,multiple]{1.1-3 Che cos'è un protocollo?}
-\textbf{1.1-3 Che cos'è un protocollo?} 
-Quali dei seguenti scenari umani coinvolgono un protocollo 
-(ricorda: ``I protocolli definiscono il formato, l'ordine dei messaggi inviati e ricevuti tra le entità di rete e le azioni intraprese sulla trasmissione e la ricezione dei messaggi'')? 
+\textbf{1.1-3 Che cos'è un protocollo?}
+Quali dei seguenti scenari umani coinvolgono un protocollo
+(ricorda: ``I protocolli definiscono il formato, l'ordine dei messaggi inviati e ricevuti tra le entità di rete e le azioni intraprese sulla trasmissione e la ricezione dei messaggi'')?
 Seleziona una o più risposte corrette di seguito. [Suggerimento: più di una delle risposte di seguito sono corrette.]
 
 \item[fraction=33.33333] Una persona chiede e ottiene l'orario da/per un'altra persona.
@@ -26,12 +40,12 @@ Seleziona una o più risposte corrette di seguito. [Suggerimento: più di una de
 Abbinare la rete di accesso alle velocità approssimative che un abbonato potrebbe sperimentare.
 (Nota: consulta il libro di testo dell'8ª edizione o le diapositive).
 
-\item Ethernet \answer Cablato. Fino a 100's di Gbps per collegamento.
-\item 802.11 WiFi \answer Senza fili. Dai 10's ai 100's di Mbps per dispositivo.
-\item Rete di accesso via cavo \answer Cablato. Fino a 10's o 100's di Mbps in download per utente.
-\item DSL \answer Cablato. Fino a 10's di Mbps in download per utente.
-\item 4G cellulare LTE \answer Senza fili. Fino a 10's di Mbps per dispositivo.
-\item \answer Senza fili, fino a 10's di Kbps per dispositivo.
+\item Ethernet \answer Cablato. Fino a 100's (centinaia) di Gbps per collegamento.
+\item 802.11 WiFi \answer Senza fili. Dai 10's (decina) ai 100's (centinaia) di Mbps per dispositivo.
+\item Rete di accesso via cavo \answer Cablato. Fino a 10's (decina) o 100's (centinaia) di Mbps in download per utente.
+\item DSL \answer Cablato. Fino a 10's (decina) di Mbps in download per utente.
+\item 4G cellulare LTE \answer Senza fili. Fino a 10's (decina) di Mbps per dispositivo.
+\item \answer Senza fili, fino a 10's (decina) di Kbps per dispositivo.
 \item \answer Cablato. Fino a 1 Tbps per collegamento.
 \end{matching}
 
@@ -47,14 +61,14 @@ Quale delle seguenti tecnologie del livello fisico ha la velocità di trasmissio
 \end{multi}
 
 \begin{multi}[points=1,shuffle=true]{1.3-1 Routing vs. forwarding.}
-\textbf{1.3-1 Routing vs. forwarding.} 
+\textbf{1.3-1 Routing vs. forwarding.}
 Scegli una delle due definizioni seguenti che fa la distinzione corretta tra routing e forwarding.
 \item* \textbf{Forwarding} è l'azione locale di spostare i pacchetti in arrivo dal collegamento di ingresso del router al collegamento di uscita appropriato del router, mentre \textbf{routing} è l'azione globale di determinare i percorsi sorgente-destinazione seguiti dai pacchetti.
 \item \textbf{Routing} è l'azione locale di spostare i pacchetti in arrivo dal collegamento di ingresso del router al collegamento di uscita appropriato del router, mentre \textbf{forwarding} è l'azione globale di determinare i percorsi sorgente-destinazione seguiti dai pacchetti.
 \end{multi}
 
 \begin{multi}[points=1,shuffle=true,multiple]{1.3-2 Commutazione di pacchetto rispetto a commutazione di circuito (1).}
-\textbf{1.3-2 Commutazione di pacchetto rispetto a commutazione di circuito (1).} 
+\textbf{1.3-2 Commutazione di pacchetto rispetto a commutazione di circuito (1).}
 Quali delle caratteristiche seguenti sono associate alla tecnica di commutazione di pacchetto? Seleziona tutte le risposte corrette. [Suggerimento: più di una delle risposte è corretta].
 \item Riserva le risorse necessarie per una chiamata da origine a destinazione.
 \item[fraction=25] Le risorse vengono utilizzate su richiesta, non prenotate in anticipo.
@@ -66,7 +80,7 @@ Quali delle caratteristiche seguenti sono associate alla tecnica di commutazione
 \end{multi}
 
 \begin{multi}[points=1,shuffle=true,multiple]{1.3-3 Commutazione di pacchetto rispetto a commutazione di circuito (2).}
-\textbf{1.3-3 Commutazione di pacchetto rispetto a commutazione di circuito (2).} 
+\textbf{1.3-3 Commutazione di pacchetto rispetto a commutazione di circuito (2).}
 Quali delle caratteristiche seguenti sono associate alla tecnica di commutazione di circuito? Seleziona tutte le risposte corrette. [Suggerimento: più di una delle risposte è corretta].
 \item[fraction=33.33333] Riserva le risorse necessarie per una chiamata da origine a destinazione.
 \item Le risorse vengono utilizzate su richiesta, non prenotate in anticipo.
@@ -78,8 +92,8 @@ Quali delle caratteristiche seguenti sono associate alla tecnica di commutazione
 \end{multi}
 
 \begin{multi}[points=1,shuffle=true]{1.3-4 Quante chiamate possono essere gestite?}
-\textbf{1.3-4 Quante chiamate possono essere gestite?} 
-Considera la rete a commutazione di circuito mostrata nella figura sottostante, con quattro commutatori di circuito A, B, C e D. Supponi che ci siano 20 circuiti tra A e B, 19 circuiti tra B e C, 15 circuiti tra C e D e 16 circuiti tra D e A. 
+\textbf{1.3-4 Quante chiamate possono essere gestite?}
+Considera la rete a commutazione di circuito mostrata nella figura sottostante, con quattro commutatori di circuito A, B, C e D. Supponi che ci siano 20 circuiti tra A e B, 19 circuiti tra B e C, 15 circuiti tra C e D e 16 circuiti tra D e A.
 \begin{center}
 \includegraphics[width=\linewidth]{figs/1.3.4.png}
 \end{center}
@@ -92,15 +106,15 @@ Qual è il numero massimo di connessioni che possono essere attive nella rete co
 \end{multi}
 
 \begin{shortanswer}[points=1,shuffle=true]{1.3-5 Il traceroute.}
-\textbf{1.3-5 Il \textit{traceroute}.} 
-Esegui un \textit{traceroute} dal tuo computer (su qualsiasi rete tu sia) a gaia.cs.umass.edu. Usa il comando \textit{traceroute} (nel terminale di Linux o Mac) o \textit{tracert} (nella riga di comando di Windows). 
+\textbf{1.3-5 Il \textit{traceroute}.}
+Esegui un \textit{traceroute} dal tuo computer (su qualsiasi rete tu sia) a gaia.cs.umass.edu. Usa il comando \textit{traceroute} (nel terminale di Linux o Mac) o \textit{tracert} (nella riga di comando di Windows).
 
 Inserisci la parte mancante del nome del router appena prima di raggiungere l'host gaia.cs.umass.edu: ??.cs.umass.edu
 \item nscs1bbs1
-\end{shortanswer}    
+\end{shortanswer}
 
 \begin{multi}[points=1,shuffle=true,multiple]{1.3-6 Cos'è una ``rete di reti''?}
-\textbf{1.3-6 Cos'è una ``rete di reti''?}  
+\textbf{1.3-6 Cos'è una ``rete di reti''?}
 Quando diciamo che Internet è una ``rete di reti,'' intendiamo? Seleziona tutto ciò che si applica (suggerimento: seleziona almeno due risposte).
 \item Internet è la rete più grande mai costruita.
 \item[fraction=50] Internet è costituita da molte reti diverse interconnesse tra loro.
@@ -129,8 +143,8 @@ Abbinare la descrizione di ciascun componente del ritardo dei pacchetti al suo n
 \end{matching}
 
 \begin{multi}[points=1,shuffle=true]{1.4-02 Calcolo del ritardo di trasmissione del pacchetto (1).}
-\textbf{1.4-02 Calcolo del ritardo di trasmissione del pacchetto (1).} 
-Supponi che un pacchetto abbia una lunghezza di $L$=1500 byte (un byte = 8 bit) e il collegamento trasmette a $R$=1 Gbps (cioè, un collegamento può trasmettere 1.000.000.000 bit al secondo).  
+\textbf{1.4-02 Calcolo del ritardo di trasmissione del pacchetto (1).}
+Supponi che un pacchetto abbia una lunghezza di $L$=1500 byte (un byte = 8 bit) e il collegamento trasmette a $R$=1 Gbps (cioè, un collegamento può trasmettere 1.000.000.000 bit al secondo).
 Qual è il ritardo di trasmissione per questo pacchetto?
 \begin{center}
 \includegraphics[width=.8\linewidth]{figs/1.4.2.png}
@@ -143,7 +157,7 @@ Qual è il ritardo di trasmissione per questo pacchetto?
 \end{multi}
 
 \begin{multi}[points=1,shuffle=true]{1.4-03 Calcolo del ritardo di trasmissione del pacchetto (2).}
-\textbf{1.4-03 Calcolo del ritardo di trasmissione del pacchetto (2).} 
+\textbf{1.4-03 Calcolo del ritardo di trasmissione del pacchetto (2).}
 Supponi che un pacchetto abbia una lunghezza di $L$ = 1200 byte (un byte = 8 bit) e il collegamento trasmette a $R$ = 100 Mbps (cioè, un collegamento può trasmettere 100.000.000 bit al secondo).  Qual è il ritardo di trasmissione per questo pacchetto?
 \begin{center}
 \includegraphics[width=.8\linewidth]{figs/1.4.2.png}
@@ -156,8 +170,8 @@ Supponi che un pacchetto abbia una lunghezza di $L$ = 1200 byte (un byte = 8 bit
 \end{multi}
 
 \begin{multi}[points=1,shuffle=true]{1.4-04 Calcolo del ritardo di trasmissione del pacchetto (3).}
-\textbf{1.4-04 Calcolo del ritardo di trasmissione del pacchetto (3).} 
-Considera la rete mostrata nella figura sottostante, con tre collegamenti, ciascuno con la velocità di trasmissione e la lunghezza del collegamento specificate. Supponi che la lunghezza di un pacchetto sia di $8000$ bit. Qual è il ritardo di trasmissione al collegamento 2? 
+\textbf{1.4-04 Calcolo del ritardo di trasmissione del pacchetto (3).}
+Considera la rete mostrata nella figura sottostante, con tre collegamenti, ciascuno con la velocità di trasmissione e la lunghezza del collegamento specificate. Supponi che la lunghezza di un pacchetto sia di $8000$ bit. Qual è il ritardo di trasmissione al collegamento 2?
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/1.4.4.png}
 \end{center}
@@ -169,9 +183,9 @@ Considera la rete mostrata nella figura sottostante, con tre collegamenti, ciasc
 \end{multi}
 
 \begin{multi}[points=1,shuffle=true]{1.4-05 Calcolo del ritardo di propagazione.}
-\textbf{1.4-05 Calcolo del ritardo di propagazione.} 
+\textbf{1.4-05 Calcolo del ritardo di propagazione.}
 Considera la rete mostrata nella figura sottostante, con tre collegamenti, ciascuno con la velocità di trasmissione e la lunghezza del collegamento specificate. Supponi che la lunghezza di un pacchetto sia di $8000$ bit. Il ritardo di propagazione della luce su ciascun collegamento è di $3\times10^8$ m/s.
-Qual è il ritardo di propagazione nel collegamento 2? 
+Qual è il ritardo di propagazione nel collegamento 2?
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/1.4.4.png}
 \end{center}
@@ -183,20 +197,20 @@ Qual è il ritardo di propagazione nel collegamento 2?
 \end{multi}
 
 \begin{multi}[points=1,shuffle=true]{1.4-06 Calcolo del throughput.}
-\textbf{1.4-06 Calcolo del throughput.} 
-Qual è il throughput massimo raggiungibile tra mittente e destinatario nello scenario mostrato di seguito? 
+\textbf{1.4-06 Calcolo del throughput.}
+Qual è il throughput massimo raggiungibile tra mittente e destinatario nello scenario mostrato di seguito?
 \begin{center}
 \includegraphics[width=.9\linewidth]{figs/1.4.6.jpg}
 \end{center}
-%  
+%
 \item* 1,5 Mbps
 \item 10 Mbps
 \item 11,5 Mbps
 \end{multi}
 
 \begin{shortanswer}[points=1,shuffle=true]{1.4-07 Calcolo del throughput.}
-\textbf{1.4-07 Calcolo del throughput.} 
-Considera lo scenario mostrato di seguito, con quattro diversi server collegati a quattro diversi client su quattro percorsi di tre hop. Le quattro coppie condividono un hop centrale comune con una capacità di trasmissione di $R$ = 300 Mbps. I quattro collegamenti dai server al link condiviso hanno una capacità di trasmissione di $R_S$ = 50 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 90 Mbps. Qual è il throughput massimo end-to-end (un valore intero, in Mbps) per ciascuna delle quattro coppie client-server, supponendo che il link centrale sia condiviso in modo equo (divida la sua velocità di trasmissione in modo uguale) e che tutti i server stiano cercando di inviare alla massima velocità? 
+\textbf{1.4-07 Calcolo del throughput.}
+Considera lo scenario mostrato di seguito, con quattro diversi server collegati a quattro diversi client su quattro percorsi di tre hop. Le quattro coppie condividono un hop centrale comune con una capacità di trasmissione di $R$ = 300 Mbps. I quattro collegamenti dai server al link condiviso hanno una capacità di trasmissione di $R_S$ = 50 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 90 Mbps. Qual è il throughput massimo end-to-end (un valore intero, in Mbps) per ciascuna delle quattro coppie client-server, supponendo che il link centrale sia condiviso in modo equo (divida la sua velocità di trasmissione in modo uguale) e che tutti i server stiano cercando di inviare alla massima velocità?
 [Nota: Fornisci la tua risposta come un numero intero, senza zeri iniziali e senza punti decimali.]
 \begin{center}
 \includegraphics[width=0.7\linewidth]{figs/1.4.7.png}
@@ -207,12 +221,12 @@ Considera lo scenario mostrato di seguito, con quattro diversi server collegati 
 \end{shortanswer}
 
 \begin{shortanswer}[points=1,shuffle=true]{1.4-08 Calcolo dell'utilizzo (1).}
-\textbf{1.4-08 Calcolo dell'utilizzo (1).} 
-Considera lo scenario mostrato di seguito, con quattro diversi server collegati a quattro diversi client su quattro percorsi di tre hop. Le quattro coppie condividono un hop centrale comune con una capacità di trasmissione di $R$ = 300 Mbps. I quattro collegamenti dai server al link condiviso hanno una capacità di trasmissione di $R_S$ = 50 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 90 Mbps. 
+\textbf{1.4-08 Calcolo dell'utilizzo (1).}
+Considera lo scenario mostrato di seguito, con quattro diversi server collegati a quattro diversi client su quattro percorsi di tre hop. Le quattro coppie condividono un hop centrale comune con una capacità di trasmissione di $R$ = 300 Mbps. I quattro collegamenti dai server al link condiviso hanno una capacità di trasmissione di $R_S$ = 50 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 90 Mbps.
 
-Supponendo che i server stiano tutti inviando alla massima velocità possibile, qual è l'utilizzo dei link del server (con capacità di trasmissione $R_S$)? 
+Supponendo che i server stiano tutti inviando alla massima velocità possibile, qual è l'utilizzo dei link del server (con capacità di trasmissione $R_S$)?
 
-Inserisci la tua risposta in forma decimale come 1,00 (se l'utilizzo è 1) o 0,xx (se l'utilizzo è inferiore a 1, arrotondato all'xx più vicino). 
+Inserisci la tua risposta in forma decimale come 1,00 (se l'utilizzo è 1) o 0,xx (se l'utilizzo è inferiore a 1, arrotondato all'xx più vicino).
 
 \begin{center}
 \includegraphics[width=0.7\linewidth]{figs/1.4.7.png}
@@ -221,12 +235,12 @@ Inserisci la tua risposta in forma decimale come 1,00 (se l'utilizzo è 1) o 0,x
 \end{shortanswer}
 
 \begin{shortanswer}[points=1,shuffle=true]{1.4-09 Calcolo dell'utilizzo (2).}
-\textbf{1.4-09 Calcolo dell'utilizzo (2).} 
-Considera lo scenario mostrato di seguito, con quattro diversi server collegati a quattro diversi client su quattro percorsi di tre hop. Le quattro coppie condividono un hop centrale comune con una capacità di trasmissione di $R$ = 300 Mbps. I quattro collegamenti dai server al link condiviso hanno una capacità di trasmissione di $R_S$ = 50 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 90 Mbps. 
+\textbf{1.4-09 Calcolo dell'utilizzo (2).}
+Considera lo scenario mostrato di seguito, con quattro diversi server collegati a quattro diversi client su quattro percorsi di tre hop. Le quattro coppie condividono un hop centrale comune con una capacità di trasmissione di $R$ = 300 Mbps. I quattro collegamenti dai server al link condiviso hanno una capacità di trasmissione di $R_S$ = 50 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 90 Mbps.
 
-Supponendo che i server stiano tutti inviando alla massima velocità possibile, qual è l'utilizzo del link condiviso? 
+Supponendo che i server stiano tutti inviando alla massima velocità possibile, qual è l'utilizzo del link condiviso?
 
-Inserisci la tua risposta in forma decimale come 1,00 (se l'utilizzo è 1) o 0,xx (se l'utilizzo è inferiore a 1, arrotondato all'xx più vicino). 
+Inserisci la tua risposta in forma decimale come 1,00 (se l'utilizzo è 1) o 0,xx (se l'utilizzo è inferiore a 1, arrotondato all'xx più vicino).
 
 \begin{center}
 \includegraphics[width=0.7\linewidth]{figs/1.4.7.png}
@@ -235,10 +249,10 @@ Inserisci la tua risposta in forma decimale come 1,00 (se l'utilizzo è 1) o 0,x
 \end{shortanswer}
 
 \begin{shortanswer}[points=1,shuffle=true]{1.4-10 Calcolo dell'utilizzo (3).}
-\textbf{1.4-10 Calcolo dell'utilizzo (3).} 
-Considera lo scenario mostrato di seguito, con quattro diversi server collegati a quattro diversi client su quattro percorsi di tre hop. Le quattro coppie condividono un hop centrale comune con una capacità di trasmissione di $R$ = 300 Mbps. I quattro collegamenti dai server al link condiviso hanno una capacità di trasmissione di $R_S$ = 50 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 90 Mbps. 
+\textbf{1.4-10 Calcolo dell'utilizzo (3).}
+Considera lo scenario mostrato di seguito, con quattro diversi server collegati a quattro diversi client su quattro percorsi di tre hop. Le quattro coppie condividono un hop centrale comune con una capacità di trasmissione di $R$ = 300 Mbps. I quattro collegamenti dai server al link condiviso hanno una capacità di trasmissione di $R_S$ = 50 Mbps. Ciascuno dei quattro collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 90 Mbps.
 
-Supponendo che i server stiano tutti inviando alla massima velocità possibile, qual è l'utilizzo dei link del client (con capacità di trasmissione $R_C$)? 
+Supponendo che i server stiano tutti inviando alla massima velocità possibile, qual è l'utilizzo dei link del client (con capacità di trasmissione $R_C$)?
 
 Inserisci la tua risposta in forma decimale come 1,00 (se l'utilizzo è 1) o 0,xx (se l'utilizzo è inferiore a 1, arrotondato all'xx più vicino).
 
@@ -249,7 +263,7 @@ Inserisci la tua risposta in forma decimale come 1,00 (se l'utilizzo è 1) o 0,x
 \end{shortanswer}
 
 \begin{multi}[points=1,shuffle=true]{1.4.11 Calcolo del throughput.}
-\textbf{1.4.11 Calcolo del throughput.} 
+\textbf{1.4.11 Calcolo del throughput.}
 Considera lo scenario mostrato di seguito, con 10 diversi server (tre mostrati) collegati a 10 diversi client su dieci percorsi di tre hop. Le coppie condividono un hop centrale comune con una capacità di trasmissione di \textbf{R = 300 Mbps.} I collegamenti dai server al link centrale condiviso hanno una capacità di trasmissione di $R_S$ = 90 Mbps. Ciascuno dei collegamenti dal link centrale condiviso a un client ha una capacità di trasmissione di $R_C$ = 50 Mbps.
 \begin{center}
 \includegraphics[width=0.7\linewidth]{figs/1.4.11.png}
@@ -302,7 +316,7 @@ Considera la figura qui sotto, che mostra l'intestazione di frame a livello di c
 \end{matching}
 
 \begin{multi}[points=1,shuffle=true]{1.5-4 Cosa si intende per ``incapsulamento''?}
-\textbf{1.5-4 Cosa si intende per ``incapsulamento''?} 
+\textbf{1.5-4 Cosa si intende per ``incapsulamento''?}
 Quali delle definizioni seguenti descrivono cosa si intende per ``incapsulamento''?
 \item Calcolare la somma di tutti i byte all'interno di un pacchetto e inserire quel valore nel campo intestazione del pacchetto.
 \item Determinare il nome dell'host di destinazione, tradurre quel nome in un indirizzo IP e quindi inserire quel valore nel campo intestazione di un pacchetto.
@@ -349,8 +363,8 @@ Abbinare un nome di organizzazione di seguito al ruolo dell'organizzazione nella
 \end{matching}
 
 \begin{multi}[points=1,shuffle=true]{1.8-2. Cosa significa ``usare'' Internet?}
-\textbf{1.8-2. Cosa significa ``usare'' Internet?} 
-Nel 2021, l'Unione Internazionale delle Telecomunicazioni (ITU) ha riportato che il 61,6\% della popolazione mondiale è ``utente di Internet''. Cosa significa essere un ``utente di Internet'' secondo l'ITU? 
+\textbf{1.8-2. Cosa significa ``usare'' Internet?}
+Nel 2021, l'Unione Internazionale delle Telecomunicazioni (ITU) ha riportato che il 61,6\% della popolazione mondiale è ``utente di Internet''. Cosa significa essere un ``utente di Internet'' secondo l'ITU?
 Per rispondere a questa domanda, dovrai guardare il \href{https://www.youtube.com/watch?v=-YaGGf8C1A4}{video supplementare del Capitolo 1 su ``Chi Usa Internet?'' [Nota: Video in Inglese]}
 \item* Che qualcuno abbia utilizzato Internet almeno una volta negli ultimi tre mesi.
 \item Che qualcuno abbia utilizzato Internet almeno una volta nell'ultimo mese.
@@ -359,7 +373,7 @@ Per rispondere a questa domanda, dovrai guardare il \href{https://www.youtube.co
 \end{multi}
 
 \begin{multi}[points=1,shuffle=true]{1.8-3. Il ``digital divide''.}
-\textbf{1.8-3. Il ``digital divide''.} 
+\textbf{1.8-3. Il ``digital divide''.}
 Tra il 2010 e il 2018, quale delle seguenti ``digital divide'' (Divario Digitale) negli Stati Uniti è cambiata di meno?
 Per rispondere a questa domanda dovrai guardare il \href{https://www.youtube.com/watch?v=-YaGGf8C1A4}{video supplementare del Capitolo 1 su ``Chi Usa Internet?'' [Nota: Video in Inglese]}
 \item* Il divario nell'uso di Internet tra gli afroamericani e le popolazioni ispaniche rispetto alle popolazioni bianche negli Stati Uniti.
