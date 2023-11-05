@@ -8,7 +8,7 @@ all:
 
 	#LANG="en_US.utf8" lualatex -shell-escape wireshark_1EN.tex
 	#LANG="en_US.utf8" lualatex -shell-escape wireshark_1IT.tex
-	LANG="en_US.utf8" lualatex -shell-escape wireshark_HTTP-1.tex
+	#LANG="en_US.utf8" lualatex -shell-escape wireshark_HTTP-1.tex
 	
 clean:
 	rm -f *.log *.aux *.png.enc *.png.png *.pdf *.xml *.auxlock *.out *.fls *.synctex.gz *fdb_latexmk
