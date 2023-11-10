@@ -1,0 +1,350 @@
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+%\usepackage[nostamp,tikz,svg]{moodle}
+\usepackage[handout,nostamp,tikz,svg]{moodle}
+\pagestyle{empty}
+ \geometry{
+ a4paper,
+ total={175mm,260mm},
+ left=15mm,
+ top=15mm,
+ }
+
+ \usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{hyperref,babel}
+\usepackage[cm]{fullpage}
+\usepackage{fancyvrb}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{quiz}{Wireshark-HTTP-1-IT}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q01.1 Introduzione e HTTP GET/response}
+\textbf{HTTP-1 Lab: Q01.1 Introduzione e HTTP GET/response.}
+
+Per rispondere alle domande Q01 fino a Q07, utilizzare il file \textbf{http-wireshark-trace1-1.}
+
+\textbf{Q01.1 Quale versione di HTTP?} 
+
+Quale versione di HTTP sta eseguendo il browser?
+\item 1
+\item* 1.1
+\item 2
+\end{multi}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q01.2 Quale versione di HTTP al server?}
+\textbf{HTTP-1 Lab: Q01.2 Quale versione di HTTP al server?} 
+
+Quale versione di HTTP viene eseguita sul server?
+\item 1
+\item* 1.1
+\item 2
+\end{multi}
+
+\begin{multi}[points=1,shuffle,multiple]{HTTP-1 Lab: Q02 Quali linguaggi?}
+\textbf{HTTP-1 Lab: Q02 Quali linguaggi?} 
+
+Quali linguaggi (se presenti) il browser indica di essere in grado di accettare dal server? Seleziona tutte le risposte corrette.
+\item* en
+\item Java
+\item da
+\item Francese
+\item Nessuno di questi è accettato.
+\item en-gb
+\item HTML
+\item* en-us
+\end{multi}
+
+\begin{shortanswer}[points=1]{HTTP-1 Lab: Q03.1 Indirizzo IP del client}
+\textbf{HTTP-1 Lab: Q03.1 Indirizzo IP del client.} 
+
+Qual è l'indirizzo IP del client (PC con il browser)? 
+
+Inserire l'indirizzo IP in notazione decimale puntata (includere ogni punto, omettere eventuali zeri all'inizio per qualsiasi byte che sia diverso da zero e inserire 0 se uno dei byte dell'indirizzo ha un valore zero, ad esempio 10.0.216.54):
+\item 10.0.0.44
+\end{shortanswer}
+
+\begin{shortanswer}[points=1]{HTTP-1 Lab: Q03.2 Indirizzo IP del server HTTP}
+\textbf{HTTP-1 Lab: Q03.2 Indirizzo IP del server HTTP.} 
+
+Qual è il server HTTP che ha risposto alla richiesta HTTP GET? 
+
+Inserire l'indirizzo IP in notazione decimale puntata (includere ogni punto e omettere eventuali byte a cifra iniziale 0, ad esempio 10.1.216.54): 
+\item 128.119.245.12 
+\end{shortanswer}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q04.1 Response Code del server HTTP?}
+\textbf{HTTP-1 Lab: Q04.1 Response Code del server HTTP?} 
+
+Qual è il response code restituito dal server al browser in risposta alla richiesta HTTP GET? 
+\item* 200
+\item 404
+\item 305
+\item 318
+\item 505
+\end{multi}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q04.2 HTTP response status?}
+\textbf{HTTP-1 Lab: Q04.2 HTTP response status?} 
+
+Qual è il response status restituito dal server al browser in risposta alla richiesta HTTP GET?
+\item* OK
+\item Not Found
+\item Not Modified
+\item Take it Easy
+\end{multi}
+
+\begin{shortanswer}[points=1]{HTTP-1 Lab: Q05.1 Ultima Modifica del File}
+\textbf{HTTP-1 Lab: Q05.1 Ultima Modifica del File.} 
+
+In che \textbf{data} il file HTML è stato modificato l'ultima volta sul server? 
+
+Inserire la data nel formato DD/MM/YYYY (inclusi gli "/" ed eventuali zero iniziali):
+\item 30/01/2021
+\end{shortanswer}
+
+\begin{shortanswer}[points=1]{HTTP-1 Lab: Q05.2 Ultima Modifica del File}
+\textbf{HTTP-1 Lab: Q05.2 Ultima Modifica del File.} 
+
+A che \textbf{ora} è stato modificato l'ultima volta il file HTML sul server? 
+
+Inserire l'ora nel formato HH:MM:SS (inclusi i due punti, ed eventuali zeri iniziali):
+\item 06:59:02
+\end{shortanswer}
+
+\begin{shortanswer}[points=1]{HTTP-1 Lab: Q06 Quanti byte ritornati?}
+\textbf{HTTP-1 Lab: Q06 Quanti byte ritornati?} 
+
+Quanti byte di contenuto vengono restituiti al browser? 
+Inserire il numero di byte interi (senza zeri iniziali):
+\item 128
+\end{shortanswer}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q07 Campi mancanti?}
+\textbf{HTTP-1 Lab: Q07 Campi mancanti?} 
+
+Esaminando i dati grezzi nella finestra dei contenuti del pacchetto, vedi delle intestazioni all'interno dei dati che non sono visualizzate nella finestra dell'elenco dei pacchetti?
+\item* No
+\item Sì
+\end{multi}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q08 Conditional GET - richiesta del client (a).}
+\textbf{HTTP-1 Lab: Q08 Conditional GET - richiesta del client (a).} 
+
+Le domande Q8-Q11 esplorano il HTTP Conditional GET e il campo If-Modified-Since; queste domande sono basate sul file \textbf{http-wireshark-trace2-1}
+
+Individua il primo HTTP GET in questo file di traccia (il primo GET per l'oggetto \href{http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html}{http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html}).
+
+Vedi una linea ``IF-MODIFIED-SINCE'' in questa richiesta HTTP GET?
+\item* No
+\item Sì
+\item Non c'è abbastanza informazione per saperlo.
+\item Forse
+\end{multi}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q09 Conditional GET - risposta del server (a)}
+\textbf{HTTP-1 Lab: Q09 Conditional GET - risposta del server (a).}
+
+Trova la risposta del server alla prima richiesta HTTP in questo file di traccia (il primo GET per \href{http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html}{http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html}).
+
+Il server ha restituito esplicitamente il contenuto del file? Come puoi dirlo? 
+\item* Sì, il server ha restituito il contenuto completo del file. Ci sono 371 byte di dati nel corpo della risposta ``200 OK''.
+\item No, il server non ha restituito il contenuto completo del file. Ci sono zero byte di dati nel corpo della risposta ``200 OK''.
+\item No, il server non ha restituito il contenuto completo del file. Ci sono zero byte di dati nel corpo della risposta ``304 Not Modified''.
+\item Sì, il server ha restituito il contenuto completo del file. Questo è dimostrato da un campo ``HTML file attached: YES'' nella risposta ``200 OK''.
+\end{multi}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q10.1 Conditional GET - richiesta del client (b)}
+\textbf{HTTP-1 Lab: Q10.1 Conditional GET - richiesta del client (b).} 
+
+Individua la \textbf{seconda} richiesta HTTP GET in questo file di traccia (la seconda GET per \href{http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html}{http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html}).
+
+C'è una linea ``IF-MODIFIED-SINCE'' in questa richiesta HTTP GET?
+\item No
+\item* Sì
+\item Non c'è abbastanza informazione per saperlo.
+\item Forse
+\end{multi}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q10.2 Conditional GET - richiesta del client (b)}
+\textbf{HTTP-1 Lab: Q10.2 Conditional GET - richiesta del client (b).} 
+
+Individua la \textbf{seconda} richiesta HTTP GET in questo file di traccia (il secondo GET per \href{http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html}{http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html}).
+
+Cerca un campo ``If-Modified-Since:'' in questa richiesta GET HTTP. Se c'è un tale campo, quale tipo di valore segue la stringa ``If-Modified-Since:''? 
+\item Non c'è alcun campo ``If-Modified-Since:'' in questa seconda richiesta GET.
+\item* Una data e ora, in testo ASCII leggibile da umani.
+\item Una data e ora, espressa in tempo Unix -- il numero di secondi trascorsi dal primo gennaio 1970.
+\item Un valore binario (SI/NO) che indica se l'oggetto è presente o meno nella cache del browser.
+\item Un valore di cookie HTTP intero.
+\end{multi}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q11 Conditional GET - risposta del server (b)}
+\textbf{HTTP-1 Lab: Q11 Conditional GET - risposta del server (b).} 
+
+Individuare la risposta del server nella traccia (il secondo GET per \href{http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html}{http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file2.html}). 
+
+Il server ha esplicitamente restituito i contenuti del file? Come puoi dirlo?
+\item Sì, il server ha restituito il contenuto completo del file. Ci sono 371 byte di dati nel corpo della risposta ``200 OK''.
+\item No, il server non ha restituito il contenuto completo del file. Ci sono zero byte di dati nel corpo della risposta ``200 OK''.
+\item* No, il server non ha restituito il contenuto completo del file. Ci sono zero byte di dati nel corpo della risposta ``304 Not Modified''.
+\item Sì, il server ha restituito il contenuto completo del file. Questo è dimostrato da un campo ``HTML file attached: YES'' nella risposta ``200 OK''.
+\end{multi}
+
+\begin{shortanswer}[points=1]{HTTP-1 Lab: Q12.1 Recuperare un file di grandi dimensioni - Richiesta del client}
+\textbf{HTTP-1 Lab: Q12.1 Recuperare un file di grandi dimensioni - Richiesta del client.} 
+
+Le domande da Q12 a Q15 esplorano il comportamento HTTP quando viene richiesto un oggetto di grandi dimensioni; queste domande si basano sul file \textbf{http-wireshark-trace3-1}
+
+Quanti messaggi di richiesta HTTP GET il browser ha inviato per scaricare la lunga Dichiarazione dei Diritti, posizionata a \href{http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html}{http://gaia.cs.umass.edu/wireshark-labs/HTTP-wireshark-file3.html}?
+\item 1
+\end{shortanswer}
+
+\begin{shortanswer}[points=1]{HTTP-1 Lab: Q12.2 Recuperare un file di grandi dimensioni - richiesta del client}
+\textbf{HTTP-1 Lab: Q12.2 Recuperare un file di grandi dimensioni - Richiesta del client}. 
+
+Quale numero di pacchetto nella traccia contiene il messaggio GET che il browser ha inviato per scaricare la Dichiarazione dei Diritti?
+\item 26
+\end{shortanswer}
+
+\begin{shortanswer}[points=1]{HTTP-1 Lab: Q13 Recuperare un file di grandi dimensioni - risposta del server}
+\textbf{HTTP-1 Lab: Q13 Recuperare un file di grandi dimensioni - risposta del server.} 
+
+Quale numero di pacchetto nella traccia contiene la \textbf{risposta del server} al messaggio GET inviato dal browser per scaricare la Dichiarazione dei Diritti? 
+\item 32
+\end{shortanswer}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q14.1 Recuperare un file di grandi dimensioni - risposta del server}
+\textbf{HTTP-1 Lab: Q14.1 Recuperare un file di grandi dimensioni - risposta del server.} 
+
+Individuare la \textbf{risposta del server} al messaggio GET inviato dal browser per scaricare la Dichiarazione dei Diritti.
+
+Qual è il codice di stato presente nel messaggio di risposta HTTP? 
+\item 100
+\item* 200
+\item 304
+\item 206
+\item 404
+\end{multi}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q14.2 Recuperare un file di grandi dimensioni - risposta del server}
+\textbf{HTTP-1 Lab: Q14.2 Recuperare un file di grandi dimensioni - risposta del server.}
+
+Individuare la \textbf{risposta del server} al messaggio GET inviato dal browser per scaricare la Dichiarazione dei Diritti.
+
+Qual è la frase di stato presente nel messaggio di risposta HTTP? 
+\item Continue
+\item* OK
+\item Not Modified
+\item Not Found
+\item Partial Content
+\end{multi}
+
+\begin{shortanswer}[points=1]{HTTP-1 Lab: Q15.1 Recuperare un file di grandi dimensioni - risposta del server}
+\textbf{HTTP-1 Lab: Q15.1 Recuperare un file di grandi dimensioni - risposta del server.} 
+
+Trattiamo nuovamente la \textbf{risposta del server} al messaggio GET inviato dal browser per scaricare la Dichiarazione dei Diritti. 
+
+Quanti segmenti TCP contenenti dati sono stati necessari per inviare la singola risposta HTTP e il testo della Dichiarazione dei Diritti?
+\item 4
+\end{shortanswer}
+
+\begin{multi}[points=1,multiple]{HTTP-1 Lab: Q15.2 Recuperare un file di grandi dimensioni - risposta del server}
+\textbf{HTTP-1 Lab: Q15.2 Recuperare un file di grandi dimensioni - risposta del server.} 
+
+Analizziamo di nuovo la \textbf{risposta del server} al messaggio GET inviato dal browser per scaricare la Dichiarazione dei Diritti. 
+
+Quali sono gli indici dei pacchetti nel file di traccia dei segmenti TCP multipli che trasportano collettivamente la singola risposta HTTP e il testo della Dichiarazione dei Diritti? 
+\item 27
+\item[fraction=25] 28
+\item[fraction=25] 29
+\item 30
+\item[fraction=25] 31
+\item[fraction=25] 32
+\item 33
+\end{multi}
+
+\begin{shortanswer}[points=1]{HTTP-1 Lab: Q16.1 Downloading documenti HTML con oggetti incorporati - lato client}
+\textbf{HTTP-1 Lab: Q16.1 Downloading documenti HTML con oggetti incorporati - lato client.}
+
+Le domande Q16 e Q17 esplorano il comportamento di HTTP quando viene richiesto un oggetto contenente oggetti incorporati; queste domande sono basate sul file \textbf{http-wireshark-trace4-1}
+
+In totale, quanti messaggi di richiesta GET HTTP il browser ha inviato per scaricare il file e tutti gli oggetti in esso incorporati nel file base \textbf{HTTP-wireshark-file4.html}:
+\item 4
+\end{shortanswer}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q16.2 Downloading documenti HTML con oggetti incorporati - client side}
+\textbf{HTTP-1 Lab: Q16.2 Downloading documenti HTML con oggetti incorporati - client side.}
+
+Quali indirizzi di server sono stati utilizzati per inviare i messaggi di richiesta HTTP GET multipli al fine di scaricare il file di base e tutti gli oggetti in esso incorporati?  
+\item Una sola richiesta HTTP GET è andata a 128.119.245.12 (gaia.cs.umass.edu). Non sono state inviate altre richieste HTTP GET.
+\item Due diverse richieste HTTP GET sono andate a 128.119.245.12 (gaia.cs.umass.edu). Non sono state inviate altre richieste HTTP GET.
+\item Due diverse richieste HTTP GET sono andate a 128.119.245.12 (gaia.cs.umass.edu) - una per il file di base e una per un oggetto immagine. Un'altra richiesta HTTP GET è andata a 192.168.1.102. Queste sono tutte le richieste HTTP inviate.
+\item Due diverse richieste HTTP GET sono andate a 128.119.245.12 (gaia.cs.umass.edu) - una per il file di base e una per un oggetto immagine. Un'altra richiesta HTTP GET è andata a 178.79.137.164. Queste sono tutte le richieste HTTP inviate.
+\item* Due diverse richieste HTTP GET sono andate a 128.119.245.12 (gaia.cs.umass.edu) - una per il file di base e una per un oggetto immagine. Un'altra richiesta HTTP GET è andata a 178.79.137.164, che ha restituito un codice 301 Object Moved, ed è stata quindi inviata una quarta richiesta HTTP GET a 104.98.115.146. Queste quattro richieste sono tutte le richieste HTTP inviate.
+\item Due diverse richieste HTTP GET sono andate a 128.119.245.12 (gaia.cs.umass.edu) - una per il file di base e una per un oggetto immagine. Un'altra richiesta HTTP GET è andata a 178.79.137.164, che ha restituito un codice 301 Object Moved, quindi è stata richiesta una quarta GET per richiedere un altro file da 178.79.137.164. Queste quattro richieste sono tutte le richieste HTTP inviate.
+\end{multi}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q17 Downloading documenti HTML con oggetti incorporati - client side}
+\textbf{HTTP-1 Lab: Q17 Downloading documenti HTML con oggetti incorporati - lato client.} 
+
+Puoi dire se il browser ha scaricato due oggetti immagine in modo seriale o se sono stati scaricati da due siti web in parallelo? 
+Scegliere la dichiarazione seguente che meglio spiega la risposta a questa domanda.  
+\item I due file con l'immagine sono stati scaricati in \textbf{parallelo}. Ciò è dimostrato dal fatto che vengono effettuate due richieste di messaggi GET prima che venga ricevuto alcun oggetto immagine.
+\item* I due file con l'immagine sono stati scaricati \textbf{in modo seriale}. Ciò è dimostrato dal fatto che la seconda delle richieste di messaggi GET (per le immagini) non viene effettuata fino a che non viene ricevuta la prima immagine. 
+\item In base ai messaggi GET intercalati (per gli oggetti immagine) e alle risposte del server, non è possibile sapere se sono stati scaricati in maniera seriale o in parallelo.
+\end{multi}
+
+\begin{shortanswer}[points=1] {HTTP-1 Lab: Q18.1 Autenticazione HTTP semplice (e non sicura)}
+\textbf{HTTP-1 Lab: Q18.1 Autenticazione HTTP semplice (e non sicura).}
+
+Le domande Q18 e Q19 esplorano la semplice (e non sicura) sequenza di messaggi HTTP scambiati per un sito protetto da password nel caso in cui HTTP viene eseguito direttamente su TCP. Queste domande si basano sul file \textbf{http-wireshark-trace5-1}
+
+Inserisci il numero del pacchetto (indice del pacchetto nel file di traccia) contenente la richiesta HTTP GET iniziale inviata a \textbf{gaia.cs.umass.edu} per recuperare il file \textbf{HTTP-wireshark-file5.html}:
+\item 92
+\end{shortanswer}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q18.2 Autenticazione HTTP semplice (e non sicura)}
+\textbf{HTTP-1 Lab: Q18.2 Autenticazione HTTP semplice (e non sicura).}
+
+Qual è la risposta del server (codice e frase) alla richiesta iniziale GET HTTP (per il file di base \textbf{HTTP-wireshark-file5.html}) inviata dal browser? 
+(Nota: tutte le risposte di seguito sono codici e frasi validi).   
+\item* 401 Unauthorized
+\item 200 OK
+\item 203 Non-Authoritative Information
+\item 401 Authorization Required
+\item 511 Network Authentication Required
+\item 403 Forbidden
+\end{multi}
+
+\begin{multi}[points=1,shuffle]{HTTP-1 Lab: Q19.1 Autenticazione HTTP semplice (e non sicura)}
+\textbf{HTTP-1 Lab: Q19.1 Autenticazione HTTP semplice (e non sicura).}
+
+Quando il browser invia il messaggio HTTP GET per la seconda volta (per richiedere nuovamente il file di base \textbf{HTTP-wireshark-file5.html}), quale \textbf{nuovo} campo è incluso in questo secondo messaggio HTTP GET?
+\item* Authorization:
+\item Authenticate:
+\item Password:
+\item ETag
+\item WWW-Authenticate
+\end{multi}
+
+\begin{shortanswer}[points=1]{HTTP-1 Lab: Q19.2 Autenticazione HTTP semplice (e non sicura)}
+\textbf{HTTP-1 Lab: Q19.2 Autenticazione HTTP semplice (e non sicura)}.
+
+Qual è il login per entrare in \textbf{gaia.cs.umass.edu} e recuperare il file \textbf{HTTP-wireshark-file5.html}?
+\item wireshark-students
+\end{shortanswer}
+
+\begin{shortanswer}[points=1,shuffle]{HTTP-1 Lab: Q19.3 Autenticazione HTTP semplice (e non sicura)}
+\textbf{HTTP-1 Lab: Q19.3 Autenticazione HTTP semplice (e non sicura).} 
+
+Qual è la password per entrare in \textbf{gaia.cs.umass.edu} e recuperare il file \textbf{HTTP-wireshark-file5.html}?
+\item network
+\end{shortanswer}
+
+\end{quiz}
+\end{document}
+
