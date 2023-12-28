@@ -11,8 +11,21 @@ all:
 	#LANG="en_US.utf8" lualatex -shell-escape wireshark_HTTP-1_EN.tex
 	#LANG="en_US.utf8" lualatex -shell-escape wireshark_HTTP-1_IT.tex
 
-	LANG="en_US.utf8" lualatex -shell-escape select_exercises1_EN.tex
-	LANG="en_US.utf8" lualatex -shell-escape select_exercises1_IT.tex
+	#LANG="en_US.utf8" lualatex -shell-escape select_exercises1_EN.tex
+	#LANG="en_US.utf8" lualatex -shell-escape select_exercises1_IT.tex
+	
+	cd EN && LANG="en_US.utf8" lualatex -shell-escape openquestions.tex
+	cd IT && LANG="en_US.utf8" lualatex -shell-escape openquestions.tex
 	
 clean:
-	rm -f *.log *.aux *.png.enc *.png.png *.pdf *.xml *.auxlock *.out *.fls *.synctex.gz *fdb_latexmk
+	find . -type f -name '*.aux' -delete
+	find . -type f -name '*.log' -delete
+	find . -type f -name '*.out' -delete
+	find . -type f -name '*.fls' -delete
+	find . -type f -name '*.fdb_latexmk' -delete
+	find . -type f -name '*.synctex.gz' -delete
+	find . -type f -name '*.auxlock' -delete
+	find . -type f -name '*.xml' -delete
+	find . -type f -name '*.pdf' -delete
+	find . -type f -name '*.png.enc' -delete
+	find . -type f -name '*.png.png' -delete
