@@ -1,0 +1,195 @@
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+%\usepackage[nostamp,tikz,svg]{moodle}
+\usepackage[handout,nostamp,tikz,svg]{moodle}
+\pagestyle{empty}
+ \geometry{
+ a4paper,
+ total={175mm,260mm},
+ left=15mm,
+ top=15mm,
+ }
+
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{hyperref,babel}
+\usepackage[cm]{fullpage}
+\usepackage{fancyvrb}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{quiz}{Open questions}
+
+%%%%%%%%%%%%%%%%%%%%
+% Chapter 1
+%%%%%%%%%%%%%%%%%%%%
+
+% R11
+\begin{essay}[points=1]{1.1 - End-to-end delay - 1}
+Suppose there is exactly one switch between a sending host and a receiving host. The transmission rates between the sending host and the switch and between the switch and the receiving host are R1 and R2, respectively. Assuming that the switch uses store-and-forward packet switching, what is the total end-to-end delay to send a packet of length L? Ignore queuing, propagation delay, and processing delay.
+\end{essay}
+
+% R12
+\begin{essay}[points=1]{1.2 - Circuit-switching vs packet-switching}
+What are the advantages and disadvantages of a circuit-switched network over a packet-switched network? 
+\end{essay}
+
+% R16    
+\begin{essay}[points=1]{1.3 - End-to-end delay - 2}
+Consider sending a packet from a source host to a destination host over a fixed route. List the delay components in the end-to-end delay. Which of these delays are constant and which are variable? 
+\end{essay}
+
+% R18
+\begin{essay}[points=1]{1.4 - End-to-end delay - 3}
+A user can directly connect to a server through either long-range wireless or a twisted-pair cable for transmitting a 1500-bytes file. The transmission rates of the wireless and wired media are 2 and 100 Mbps, respectively. Assume that the propagation speed in air is $3*10^8$ m/s, while the speed in the twisted pair is $2*10^8$ m/s. If the user is located 1 km away from the server, what is the delay when using each of the two technologies? 
+\end{essay}
+
+% R19
+\begin{essay}[points=1]{1.5 - Throughput}
+Suppose Host A wants to send a large file to Host B. The path from Host A to Host B has three links, of rates R1 = 500 kbps, R2 = 2 Mbps, and R3 = 1 Mbps. Assuming no other traffic in the network, what is the throughput for the file transfer? Suppose the file is 4 million bytes. Dividing the file size by the throughput, roughly how long will it take to transfer the file to Host B?
+\end{essay}
+
+% R20
+\begin{essay}[points=1]{1.6 - Packets and headers}
+Suppose end system A wants to send a large file to end system B. At a very high level, describe how end system A creates packets from the file. When one of these packets arrives to a router, what information in the packet does the router use to determine the link onto which the packet is forwarded? 
+\end{essay}
+
+% R23
+\begin{essay}[points=1]{1.7 - Internet protocol stack}
+What are the five layers in the Internet protocol stack? What are the principal responsibilities of each of these layers?
+\end{essay}
+
+%%%%%%%%%%%%%%%%%%%%
+% Chapter 2
+%%%%%%%%%%%%%%%%%%%%
+
+% R5 
+\begin{essay}[points=1]{2.1 - Sockets}
+What information is used by a process running on one host to identify a process running on another host? 
+\end{essay}
+
+% R13
+\begin{essay}[points=1]{2.2 - Web caching}
+Describe how Web caching can reduce the delay in receiving a requested object. Will Web caching reduce the delay for all objects requested by a user or for only some of the objects? Why? 
+\end{essay}
+
+%R16 
+\begin{essay}[points=1]{2.3 - Mail delivery}
+Suppose Mark Zuckerberg, with a Web-based Gmail account, sends a message to Elon Musk, who accesses his Yahoo mail using IMAP. Discuss how the message gets from Zuckerberg's host to Musk's host. 
+\end{essay}
+
+%R18: 
+\begin{essay}[points=1]{2.4 - HTTP/1.1 vs HTTP/2}
+What is the HOL (Head-Of-Line) blocking issue in HTTP/1.1? How does HTTP/2 attempt to solve it?
+\end{essay}
+
+%%%%%%%%%%%%%%%%%%%%
+% Chapter 3
+%%%%%%%%%%%%%%%%%%%%
+
+% R4
+\begin{essay}[points=1]{3.1 - UDP vs TCP}
+Describe why an application developer might choose to run an application over UDP rather than TCP. Can you think of an application in which a process in one host needs to simultaneously open sockets to two different processes in the other host?
+\end{essay}
+
+% R17
+\begin{essay}[points=1]{3.2 - TCP fairness}
+Consider two hosts, A and B, transmitting a large file to a server C, over a bottleneck link with rate R. To transfer the file, the hosts use TCP with the same parameters (including Maximum Segment Size and Round Trip Time) and start their transmissions at the same time. Host A uses a single TCP connection for the entire file, while Host B uses 9 simultaneous TCP connections, each for a portion (i.e., a chunk) of the file. What is the overall transmission rate achieved by each host at the beginning of the file transfer? Is this situation fair? Why or why not?
+\end{essay}
+
+%%%%%%%%%%%%%%%%%%%%
+% Chapter 4
+%%%%%%%%%%%%%%%%%%%%
+
+% R4 
+\begin{essay}[points=1]{4.1 - Forwarding table}
+What is the role of the forwarding table within a router? How is the forwarding table populated and maintained in a router? Explain what longest prefix matching is and why it is needed. 
+\end{essay}
+
+% R5
+\begin{essay}[points=1]{4.2 - Queuing discipline}
+Routers can use different queuing disciplines to schedule packets, such as FIFO, Priority, Round Robin (RR), and Weighted Fair Queuing (WFQ). Which of these queuing disciplines ensure that all packets depart in the order in which they arrived? Give an example showing why a network operator might want one class of packets to be given priority over another class of packets.
+\end{essay}
+
+% R18
+\begin{essay}[points=1]{4.3 - TTL}
+What field in the IP header can be used to ensure that a packet is forwarded through no more than N routers? Explain how this field is used to accomplish this.
+\end{essay}
+
+% RX
+\begin{essay}[points=1]{4.4 - DHCP}
+Explain how does the Dynamic Host Configuration Protocol (DHCP) work? What is the role of DHCP?
+\end{essay}
+
+% RX 
+\begin{essay}[points=1]{4.5 - IPv4 vs IPv6}
+List and explan some of the key differences between IPv4 and IPv6.
+\end{essay}
+
+% R29
+\begin{essay}[points=1]{4.6 - Private IP addresses and NAT}
+What is a private network address? What is the motivation for defining private network addresses? What is Network Address Translation (NAT)? What is the role of NAT and how does it work?
+\end{essay}
+
+%%%%%%%%%%%%%%%%%%%%
+% Chapter 5
+%%%%%%%%%%%%%%%%%%%%
+
+% R3
+\begin{essay}[points=1]{5.1 - Centralized and distributed routing}
+Compare and contrast the properties of a centralized and a distributed routing algorithm. Give an example of a routing protocol that takes a centralized and a decentralized approach.
+\end{essay}
+
+% R6
+\begin{essay}[points=1]{5.2 - Distance vector routing}
+How is a least cost path calculated in a decentralized routing algorithm? Give an example.
+\end{essay}
+
+%%%%%%%%%%%%%%%%%%%%
+% Chapter 6
+%%%%%%%%%%%%%%%%%%%%
+
+% R6
+\begin{essay}[points=1]{6.1 - Backoff delay}
+In CSMA/CD (Carrier Sense Multiple Access/Collision Detection), after the fifth collision, what is the probability that a node chooses K=4? The result K=4 corresponds to a delay of how many seconds on a 10 Mbps Ethernet? Recall that the backoff delay is chosen from $[0, 1, 2, ... , 2^{n-1}]$ x 512 bit times, where n is the number of collisions detected so far.
+\end{essay}
+
+% R8
+\begin{essay}[points=1]{6.2 - CSMA}
+Why does collision occur in CSMA (Carrier Sense Multiple Access), if all nodes perform carrier sensing before transmission?
+\end{essay}
+
+% R15
+\begin{essay}[points=1]{6.3 - ARP tables}
+How big are the MAC address, IPv4 and IPv6 address spaces? Each host and router has an ARP table in its memory. What are the contents of this table? Why do we need ARP tables?
+\end{essay}
+
+%%%%%%%%%%%%%%%%%%%%
+% Chapter 7
+%%%%%%%%%%%%%%%%%%%%
+
+% R1
+\begin{essay}[points=1]{7.1 - WiFi infrastructure vs ad hoc mode}
+What does it mean for a wireless network to be operating in ``infrastructure mode''? What does it mean for a wireless network to be operating in ``ad hoc mode''?
+\end{essay}
+
+% R3 
+\begin{essay}[points=1]{7.2 - 802.11 acknowledgments}
+Why are acknowledgments used in 802.11 (WiFI) but not in wired Ethernet?
+\end{essay}
+
+% R5
+\begin{essay}[points=1]{7.3 - WiFi beacon}
+Describe some roles of the beacon frames in 802.11. What is the difference between passive scanning and active scanning in WiFi? 
+\end{essay}
+
+% R10 
+\begin{essay}[points=1]{7.4 - IEEE 802.11 - RTS/CTS}
+Suppose the IEEE 802.11 RTS (Request-to-Send) and CTS (Clear-to-Send) frames were as long as the standard DATA and ACK frames. Would there be any advantage to using the CTS and RTS frames? Why or why not? 
+\end{essay}
+
+\end{quiz}
+
+\end{document}
+

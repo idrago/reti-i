@@ -1,0 +1,195 @@
+\documentclass[a4paper]{article}
+\usepackage{geometry}
+%\usepackage[nostamp,tikz,svg]{moodle}
+\usepackage[handout,nostamp,tikz,svg]{moodle}
+\pagestyle{empty}
+ \geometry{
+ a4paper,
+ total={175mm,260mm},
+ left=15mm,
+ top=15mm,
+ }
+
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{hyperref,babel}
+\usepackage[cm]{fullpage}
+\usepackage{fancyvrb}
+
+\pagestyle{empty}
+
+\begin{document}
+\begin{quiz}{Domande a risposta aperta}
+
+%%%%%%%%%%%%%%%%%%%%
+% Capitolo 1
+%%%%%%%%%%%%%%%%%%%%
+
+% R11
+\begin{essay}[points=1]{1.1 - End-to-end delay - 1}
+Supponiamo che ci sia uno switch tra un host mittente e un host destinatario. Le velocità di trasmissione tra l'host mittente e lo switch e tra lo switch e l'host destinatario sono rispettivamente R1 e R2. Assumendo che lo switch utilizzi store-and-forward, qual è il ritardo totale end-to-end per inviare un pacchetto di lunghezza L? Ignorare l'attesa in coda, il ritardo di propagazione e il ritardo di elaborazione.
+\end{essay}
+
+% R12
+\begin{essay}[points=1]{1.2 - Circuit-switching vs packet-switching}
+Quali sono i vantaggi e gli svantaggi di una rete a commutazione di circuito rispetto a una rete a commutazione di pacchetto?
+\end{essay}
+
+% R16
+\begin{essay}[points=1]{1.3 - End-to-end delay - 2}
+Considera l'invio di un pacchetto da un host sorgente a un host destinatario. Elenca le componenti di ritardo nel ritardo end-to-end. Quali di questi ritardi sono costanti e quali sono variabili?
+\end{essay}
+
+% R18
+\begin{essay}[points=1]{1.4 - End-to-end delay - 3}
+Un utente può connettersi a un server tramite wireless (a lunga distanza) o tramite cavo twisted-pair. L'utente trasmette un file di 1500 byte. Le velocità di trasmissione wireless e via cavo sono rispettivamente di 2 Mbps e 100 Mbps. Supponendo che la velocità di propagazione wireless sia di $3*10^8$ m/s, mentre la velocità nel cavo è di $2*10^8$ m/s, se l'utente si trova a 1 km dal server, qual è il ritardo totale per ciascuna delle due tecnologie?
+\end{essay}
+
+% R19
+\begin{essay}[points=1]{1.5 - Throughput}
+Supponiamo che l'host A voglia inviare un file all'host B. Il percorso da A a B ha tre collegamenti, con velocità R1 = 500 kbps, R2 = 2 Mbps e R3 = 1 Mbps. Assumendo l'assenza di altro traffico nella rete, qual è il throughput per il trasferimento del file? Supponi che il file sia di 4 milioni di byte. Dividendo la dimensione del file per il throughput, quanto tempo approssimativamente ci vorrà per trasferire il file all'host B?
+\end{essay}
+
+% R20
+\begin{essay}[points=1]{1.6 - Packet e header}
+Supponiamo che l'host A voglia inviare un file all'host B. Descrivi come A crea pacchetti dal file. Quando uno di questi pacchetti arriva a un router, quali informazioni nel pacchetto il router usa per determinare il collegamento su cui inoltrare il pacchetto?
+\end{essay}
+
+% R23
+\begin{essay}[points=1]{1.7 - Livelli di protocolli Internet}
+Quali sono i cinque livelli di protocolli Internet? Quali sono le responsabilità principali di ciascuno di questi livelli?
+\end{essay}
+
+%%%%%%%%%%%%%%%%%%%%
+% Capitolo 2
+%%%%%%%%%%%%%%%%%%%%
+
+% R5
+\begin{essay}[points=1]{2.1 - Socket}
+Quali informazioni vengono utilizzate da un processo su un host per identificare un processo in esecuzione su un altro host?
+\end{essay}
+
+% R13
+\begin{essay}[points=1]{2.2 - Web caching}
+Descrivi come la memorizzazione nella cache Web può ridurre il ritardo nel ricevere un oggetto Web. La memorizzazione nella cache Web ridurrà il ritardo per tutti gli oggetti richiesti da un utente o solo per alcuni oggetti? Perché?
+\end{essay}
+
+% R16
+\begin{essay}[points=1]{2.3 - Mail delivery}
+Supponi che Mark Zuckerberg, con un account di posta elettronica basato sul Web (come Gmail), invii un messaggio a Elon Musk, che accede alla sua posta Yahoo utilizzando IMAP. Discuti di come il messaggio passa dall'host di Zuckerberg all'host di Musk.
+\end{essay}
+
+% R18
+\begin{essay}[points=1]{2.4 - HTTP/1.1 vs HTTP/2}
+Qual è il problema di HOL blocking (Head-Of-Line) in HTTP/1.1? Come HTTP/2 cerca di risolverlo?
+\end{essay}
+
+%%%%%%%%%%%%%%%%%%%%
+% Capitolo 3
+%%%%%%%%%%%%%%%%%%%%
+
+% R4
+\begin{essay}[points=1]{3.1 - UDP vs TCP}
+Descrivi perché un sviluppatore potrebbe scegliere di eseguire un'applicazione su UDP piuttosto che su TCP. Descrivere un'applicazione in cui un processo su un host deve aprire contemporaneamente socket a due processi diversi nell'altro host?
+\end{essay}
+
+% R17
+\begin{essay}[points=1]{3.2 - TCP fairness} 
+Considera due host, A e B, che trasmettono un file a un server C, su un bottleneck link con velocità R. Per trasferire il file, gli host utilizzano TCP con gli stessi parametri (compresi Maximum Segment Size e Round Trip Time) e iniziano le trasmissioni contemporaneamente. L'host A utilizza una singola connessione TCP, mentre l'host B utilizza 9 connessioni TCP simultanee, ognuna per una porzione (cioè, un chunk) del file. Qual è la velocità di trasmissione complessiva ottenuta da ciascun host all'inizio del trasferimento del file? Questa situazione è equa? Perché?
+\end{essay}
+
+%%%%%%%%%%%%%%%%%%%%
+% Capitolo 4
+%%%%%%%%%%%%%%%%%%%%
+
+% R4
+\begin{essay}[points=1]{4.1 - Forwarding table}
+Qual è il ruolo della forwarding table all'interno di un router? Come viene popolata e mantenuta la tabella? Spiega cos'è il longest prefix matching e perché è necessario.
+\end{essay}
+
+% R5
+\begin{essay}[points=1]{4.2 - Queue discipline}
+I router possono utilizzare diverse ``queue discipline'' per schedulare i pacchetti, come FIFO, Priority, Round Robin (RR) e Weighted Fair Queuing (WFQ). Quale di queste discipline di accodamento garantisce che tutti i pacchetti partano nell'ordine in cui sono arrivati? Fornisci un esempio che mostri perché un operatore di rete potrebbe volere che una classe di pacchetti abbia la priorità su un'altra classe di pacchetti.
+\end{essay}
+
+% R18
+\begin{essay}[points=1]{4.3 - TTL}
+Quale campo nell'intestazione IP è utilizzato per garantire che un pacchetto venga inoltrato attraverso non più di N router? Spiegare come questo campo viene utilizzato per realizzare questo.
+\end{essay}
+
+
+% RX
+\begin{essay}[points=1]{4.4 - DHCP}
+Spiega come funziona il Dynamic Host Configuration Protocol (DHCP). Qual è il ruolo di DHCP?
+\end{essay}
+
+% RX
+\begin{essay}[points=1]{4.5 - IPv4 e IPv6}
+Elenca e spiega alcune delle principali differenze tra IPv4 e IPv6.
+\end{essay}
+
+% R29
+\begin{essay}[points=1]{4.6 - Indirizzi IP privati e NAT}
+Cos'è un indirizzo di rete privato? Perché esistono indirizzi privati? Cos'è un NAT (Network Address Translation)? Come funziona un NAT?
+\end{essay}
+
+%%%%%%%%%%%%%%%%%%%%
+% Capitolo 5
+%%%%%%%%%%%%%%%%%%%%
+
+% R3
+\begin{essay}[points=1]{5.1 - Instradamento centralizzato e distribuito}
+Confronta e contrasta le proprietà di un algoritmo di instradamento centralizzato con un algoritmo di instradamento distribuito. Fornisci un esempio di un protocollo di instradamento che adotta un approccio centralizzato e uno decentralizzato.
+\end{essay}
+
+% R6
+\begin{essay}[points=1]{5.2 - Distance vector routing}
+Come viene calcolato il percorso di costo minimo in un algoritmo di instradamento decentralizzato? Fornisci un esempio.
+\end{essay}
+
+
+%%%%%%%%%%%%%%%%%%%%
+% Capitolo 6
+%%%%%%%%%%%%%%%%%%%%
+
+% R6
+\begin{essay}[points=1]{6.1 - CSMA/CD}
+Nel CSMA/CD (Carrier Sense Multiple Access/Collision Detection), dopo la quinta collisione, qual è la probabilità che un nodo scelga K=4? Il risultato K=4 corrisponde a un ritardo di quanti secondi su un Ethernet a 10 Mbps? Ricorda che il ritardo di attesa è scelto da $[0, 1, 2, ... , 2^{n-1}]$ x 512 bit time, dove n è il numero di collisioni rilevate finora.
+\end{essay}
+
+% R8
+\begin{essay}[points=1]{6.2 - CSMA}
+Perché si verificano collisioni in CSMA (Carrier Sense Multiple Access) se tutti i nodi effettuano Carrier Sense prima della trasmissione?
+\end{essay}
+
+% R15
+\begin{essay}[points=1]{6.3 - ARP tables}
+Quanto è grande lo spazio degli indirizzi MAC, IPv4 e IPv6? Ogni host e router ha una tabella ARP nella sua memoria. Quali sono i contenuti di questa tabella? Perché è necessario creare una tabella ARP?
+\end{essay}
+
+%%%%%%%%%%%%%%%%%%%%
+% Capitolo 7
+%%%%%%%%%%%%%%%%%%%%
+% R1
+\begin{essay}[points=1]{7.1 - WiFi infrastructure vs ad hoc mode}
+Cosa significa che una rete wireless sta operando in ``infrastructure mode''? Cosa significa che una rete wireless sta operando in ``ad hoc mode''?
+\end{essay}
+
+% R3
+\begin{essay}[points=1]{7.2 - 802.11 acknowledgment}
+Perché vengono utilizzati gli acknowledgments in 802.11 (WiFi) ma non nell'Ethernet cablato?
+\end{essay}
+
+% R5
+\begin{essay}[points=1]{7.3 - WiFi beacon}
+Descrivi alcuni ruoli dei frame beacon in 802.11 (WiFi). Qual è la differenza tra scansione passiva e scansione attiva in WiFi?
+\end{essay}
+
+% R10
+\begin{essay}[points=1]{7.4 - IEEE 802.11 - RTS/CTS}
+Supponi che i frame RTS (Request-to-Send) e CTS (Clear-to-Send) di IEEE 802.11 fossero lunghi quanto i frame standard DATA e ACK. Ci sarebbe qualche vantaggio nell'utilizzare i frame CTS e RTS? Perché?
+\end{essay}
+
+\end{quiz}
+
+\end{document}
